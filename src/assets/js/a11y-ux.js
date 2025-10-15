@@ -1,6 +1,7 @@
 // === NAV: mark current page (match pathname + search; skip dropdowns & hashes) ===
 (function () {
-    const BASE_URL = "{{site.baseUrl}}";
+    const BASE_URL = "/tigris-public/";
+    console.log(BASE_URL);
     const currentPath   = (location.pathname.replace(/\/+$/, '') || '/').replace(BASE_URL, '');
     const currentSearch = (location.search || '');
 

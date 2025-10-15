@@ -200,7 +200,6 @@ def static_content_builder() -> None:
 
         # base url from env for github pages
         base_url = context.get("url", "")
-        context["site"] = {"baseUrl": context.get("url", "")}
 
         # Prepare context data based on the current page
         if context["page"] == "gallery" and loaded_menu_data:
