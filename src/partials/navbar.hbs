@@ -8,7 +8,7 @@
         <span class="icon-bar middle-bar"></span>
         <span class="icon-bar bottom-bar"></span>
       </button>
-      <a href="/" class="navbar-brand brand-box pe-1 pe-xl-0">
+      <a href="{{url}}/" class="navbar-brand brand-box pe-1 pe-xl-0">
         <img
           srcset="{{url}}/assets/images/logo/red_logo_120x85.jpeg 1x,
                   {{url}}/assets/images/logo/red_logo_240x170.jpeg 2x"
@@ -24,32 +24,32 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
         <ul class="navbar-nav d-flex justify-content-center navbarCollapse px-3">
           <li class="nav-item px-2">
-            <a class="nav-link btn-outline-success" href="/">
+            <a class="nav-link btn-outline-success" href="{{url}}/">
               Home
             </a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link btn-outline-success" href="/menu?scrollTo=salads">
+            <a class="nav-link btn-outline-success" href="{{url}}/menu?scrollTo=salads">
               Menu
             </a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link btn-outline-success" href="/gallery">
+            <a class="nav-link btn-outline-success" href="{{url}}/gallery">
               Gallery
             </a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link" href="/catering">
+            <a class="nav-link" href="{{url}}/catering">
               Catering
             </a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link" href="/our-story">
+            <a class="nav-link" href="{{url}}/our-story">
               Our Story
             </a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link" href="/contact">
+            <a class="nav-link" href="{{url}}/contact">
               Contact
             </a>
           </li>
@@ -74,7 +74,7 @@
         </ul>
       </div>
       {{!-- order button --}}
-      <a href="/menu?scrollTo=order-options" id="nav-order-button" class="btn">
+      <a href="{{url}}/menu?scrollTo=order-options" id="nav-order-button" class="btn">
         Order
       </a>
     </div>
