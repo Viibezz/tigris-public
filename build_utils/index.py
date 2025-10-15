@@ -127,6 +127,22 @@ def determine_output_path(source_file: str, target_dir_base: str) -> str:
         return os.path.join(target_dir_base, "index.html")
     else:
         return os.path.join(target_dir_base, folder_name, "index.html")
+    
+def prepend_base_url_to_images(data, base_url):
+    """
+    Recursively prepend base_url to all 'image' fields in JSON-like dicts/lists.
+    """
+    if isinstance(data, dict):
+        for k, v in data.items():
+            if (k == "image" or k == "thumb400" or k == "thumb800" or k == "thumb1200" or k == "thumb") and isinstance(v, str):
+                # Avoid double slashes
+                data[k] = f"{base_url.rstrip('/')}/{v.lstrip('/')}"
+            else:
+                prepend_base_url_to_images(v, base_url)
+    elif isinstance(data, list):
+        for item in data:
+            prepend_base_url_to_images(item, base_url)
+
 
 
 def static_content_builder() -> None:
@@ -182,6 +198,9 @@ def static_content_builder() -> None:
         context["page"] = file_name.replace(".hbs", "")
         context["year"] = datetime.datetime.now().year
 
+        # base url from env for github pages
+        base_url = context.get("url", "")
+
         # Prepare context data based on the current page
         if context["page"] == "gallery" and loaded_menu_data:
             gallery_items_list = []
@@ -203,13 +222,15 @@ def static_content_builder() -> None:
             # Inline gallery items as JSON string for client-side JavaScript
             context["inlined_gallery_items_json"] = json.dumps(gallery_items_list)
         
-        elif context["page"] == "menu" and loaded_menu_data:
+        elif context["page"] == "menu" and loaded_menu_data:    
             # Inline full menu data as JSON string for dynamic JS rendering
+            prepend_base_url_to_images(loaded_menu_data, base_url)
             context["inlined_full_menu_data_json"] = json.dumps(loaded_menu_data)
             console.log("Prepared full menu data for menu page.")
             
         elif context["page"] == "catering" and loaded_catering_data:
             # Inline full catering data as JSON string for dynamic JS rendering
+            prepend_base_url_to_images(loaded_catering_data, base_url)
             context["inlined_catering_data_json"] = json.dumps(loaded_catering_data)
             console.log("Prepared full catering data for catering page.")
 
