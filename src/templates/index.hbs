@@ -20,16 +20,16 @@
              aria-labelledby="home-hero-heading">
       <picture class="jarallax-img">
         {{!-- Desktop landscape (16:9) --}}
-        <source srcset="/assets/images/index/flatbreads-1920.webp 1920w,
-                        /assets/images/index/flatbreads-1280.webp 1280w,
-                        /assets/images/index/flatbreads-960.webp   960w"
+        <source srcset="{{url}}/assets/images/index/flatbreads-1920.webp 1920w,
+                        {{url}}/assets/images/index/flatbreads-1280.webp 1280w,
+                        {{url}}/assets/images/index/flatbreads-960.webp   960w"
                 media="(min-width: 992px)" type="image/webp">
         {{!-- Mobile square --}}
-        <source srcset="/assets/images/index/flatbreads-480.webp 480w,
-                        /assets/images/index/flatbreads-640.webp 640w,
-                        /assets/images/index/flatbreads-760.webp 760w"
+        <source srcset="{{url}}/assets/images/index/flatbreads-480.webp 480w,
+                        {{url}}/assets/images/index/flatbreads-640.webp 640w,
+                        {{url}}/assets/images/index/flatbreads-760.webp 760w"
                 media="(max-width: 991.98px)" type="image/webp">
-        <img src="/assets/images/index/flatbreads-640.webp"
+        <img src="{{url}}/assets/images/index/flatbreads-640.webp"
              alt="A platter of Mediterranean flatbreads with assorted toppings"
              width="643" height="643" loading="eager" decoding="async" fetchpriority="high"
              sizes="(min-width: 992px) 992px, 100vw">
@@ -63,8 +63,8 @@
       <div class="menu-slider-item">
         <a href="/menu?scrollTo=salads">
           <img decoding="async" width="150" height="150" sizes="150px"
-               src="/assets/images/food/fattoush_salad_transparent_400.jpeg"
-               srcset="/assets/images/food/fattoush_salad_transparent_400.jpeg 400w, /assets/images/food/fattoush_salad_transparent_800.jpeg 800w"
+               src="{{url}}/assets/images/food/fattoush_salad_transparent_400.jpeg"
+               srcset="{{url}}/assets/images/food/fattoush_salad_transparent_400.jpeg 400w, {{url}}/assets/images/food/fattoush_salad_transparent_800.jpeg 800w"
                alt="Fattoush Salad — click to view Salads menu"
                class="round-imgs menu-item-slider-imgs w-100"
                loading="lazy" />
@@ -74,8 +74,8 @@
       <div class="menu-slider-item">
         <a href="/menu?scrollTo=flatbreads">
           <img decoding="async" width="150" height="150" sizes="150px"
-               src="/assets/images/food/meat_flatbread_transparent_400.jpeg"
-               srcset="/assets/images/food/meat_flatbread_transparent_400.jpeg 400w, /assets/images/food/meat_flatbread_transparent_800.jpeg 800w"
+               src="{{url}}/assets/images/food/meat_flatbread_transparent_400.jpeg"
+               srcset="{{url}}/assets/images/food/meat_flatbread_transparent_400.jpeg 400w, {{url}}/assets/images/food/meat_flatbread_transparent_800.jpeg 800w"
                alt="Meat flatbread — click to view Flatbreads menu"
                class="round-imgs menu-item-slider-imgs w-100"
                loading="lazy" />
@@ -85,8 +85,8 @@
       <div class="menu-slider-item">
         <a href="/menu?scrollTo=plates">
           <img decoding="async" width="150" height="150" sizes="150px"
-               src="/assets/images/food/tigris_fries_0_transparent_400.jpeg"
-               srcset="/assets/images/food/tigris_fries_0_transparent_400.jpeg 400w, /assets/images/food/tigris_fries_0_transparent_800.jpeg 800w"
+               src="{{url}}/assets/images/food/tigris_fries_0_transparent_400.jpeg"
+               srcset="{{url}}/assets/images/food/tigris_fries_0_transparent_400.jpeg 400w, {{url}}/assets/images/food/tigris_fries_0_transparent_800.jpeg 800w"
                alt="Tigris Fries — click to view Plates menu"
                class="round-imgs menu-item-slider-imgs w-100"
                loading="lazy" />
@@ -96,8 +96,8 @@
       <div class="menu-slider-item">
         <a href="/menu?scrollTo=sandwiches">
           <img decoding="async" width="150" height="150" sizes="150px"
-               src="/assets/images/food/gyro_sandwich_transparent_400.jpeg"
-               srcset="/assets/images/food/gyro_sandwich_transparent_400.jpeg 400w, /assets/images/food/gyro_sandwich_transparent_800.jpeg 800w"
+               src="{{url}}/assets/images/food/gyro_sandwich_transparent_400.jpeg"
+               srcset="{{url}}/assets/images/food/gyro_sandwich_transparent_400.jpeg 400w, {{url}}/assets/images/food/gyro_sandwich_transparent_800.jpeg 800w"
                alt="Gyro Sandwich — click to view Sandwiches menu"
                class="round-imgs menu-item-slider-imgs w-100"
                loading="lazy" />
@@ -107,8 +107,8 @@
       <div class="menu-slider-item">
         <a href="/menu?scrollTo=sides">
           <img decoding="async" width="150" height="150" sizes="150px"
-              src="/assets/images/food/hummus_0_transparent_800.jepg"
-              srcset="/assets/images/food/hummus_0_transparent_400.jpeg 400w, /assets/images/food/hummus_0_transparent_800.jpeg 800w"
+              src="{{url}}/assets/images/food/hummus_0_transparent_800.jepg"
+              srcset="{{url}}/assets/images/food/hummus_0_transparent_400.jpeg 400w, {{url}}/assets/images/food/hummus_0_transparent_800.jpeg 800w"
               alt="Hummus — click to view Sides menu"
               class="round-imgs menu-item-slider-imgs w-100"
               loading="lazy" />
@@ -138,7 +138,7 @@
         <!-- Slide 1 -->
         <div class="carousel-item active">
           <img class="carousel-img"
-               src="/assets/images/index/slide-salads-transformed.webp"
+               src="{{url}}/assets/images/index/slide-salads-transformed.webp"
                alt="Tigris salad selection with dressings"
                loading="lazy" decoding="async" sizes="100vw">
           <div class="carousel-overlay"></div>
@@ -154,7 +154,7 @@
         <!-- Slide 2 -->
         <div class="carousel-item">
           <img class="carousel-img"
-               src="/assets/images/index/slide-sandwich-mix-transformed2.webp"
+               src="{{url}}/assets/images/index/slide-sandwich-mix-transformed2.webp"
                alt="Gyro, falafel, beef kabob, and chicken shawarma sandwiches"
                loading="lazy" decoding="async" sizes="100vw">
           <div class="carousel-overlay"></div>
@@ -173,7 +173,7 @@
         <!-- Slide 3 -->
         <div class="carousel-item">
           <img class="carousel-img"
-               src="/assets/images/index/slide-tikka.webp"
+               src="{{url}}/assets/images/index/slide-tikka.webp"
                alt="Chicken and beef tikka plate with sauces"
                loading="lazy" decoding="async" sizes="100vw">
           <div class="carousel-overlay"></div>
@@ -194,9 +194,9 @@
         <div class="col-lg-4 text-center scroll-animate">
           <img decoding="async" width="240" height="240"
               sizes="(max-width: 991px) 80vw, 240px" 
-              srcset="/assets/images/food/beef_kabob_plate_1_1_400.jpeg 400w, 
-                      /assets/images/food/beef_kabob_plate_1_1_800.jpeg 800w"
-              src="/assets/images/food/beef_kabob_plate_1_1_400.jpeg"
+              srcset="{{url}}/assets/images/food/beef_kabob_plate_1_1_400.jpeg 400w, 
+                      {{url}}/assets/images/food/beef_kabob_plate_1_1_800.jpeg 800w"
+              src="{{url}}/assets/images/food/beef_kabob_plate_1_1_400.jpeg"
               alt="Beef kabob plate served with hummus, yellow rice, tabbouleh, sauce, and fresh pita bread at Tigris Mediterranean Grille"
               class="round-imgs" loading="lazy" />
           <h2 class="fw-bold pt-3">Fresh</h2>
@@ -207,9 +207,9 @@
         <div class="col-lg-4 text-center scroll-animate">
           <img decoding="async" width="240" height="240" 
               sizes="(max-width: 991px) 80vw, 240px" 
-              srcset="/assets/images/food/tigris_salad_1_400.jpeg 400w, 
-                      /assets/images/food/tigris_salad_1_800.jpeg 800w"
-              src="/assets/images/food/tigris_salad_1_400.jpeg"
+              srcset="{{url}}/assets/images/food/tigris_salad_1_400.jpeg 400w, 
+                      {{url}}/assets/images/food/tigris_salad_1_800.jpeg 800w"
+              src="{{url}}/assets/images/food/tigris_salad_1_400.jpeg"
               alt="A fresh Tigris salad featuring spring greens, sweet cranberries, crunchy candied pecans, and creamy blue cheese, dressed with raspberry vinaigrette"
               class="round-imgs" loading="lazy" />
           <h2 class="fw-bold pt-3">Fast</h2>
@@ -220,9 +220,9 @@
         <div class="col-lg-4 text-center scroll-animate">
           <img decoding="async" width="240" height="240" 
               sizes="(max-width: 991px) 80vw, 240px" 
-              srcset="/assets/images/food/tigris_fries_5_400.jpeg 400w, 
-                      /assets/images/food/tigris_fries_5_400.jpeg 800w"
-              src="/assets/images/food/tigris_fries_5_400.jpeg"
+              srcset="{{url}}/assets/images/food/tigris_fries_5_400.jpeg 400w, 
+                      {{url}}/assets/images/food/tigris_fries_5_400.jpeg 800w"
+              src="{{url}}/assets/images/food/tigris_fries_5_400.jpeg"
               alt="Tender, marinated chicken shawarma on a perfectly baked flatbread"
               class="round-imgs" loading="lazy" />
           <h2 class="fw-bold pt-3">Fantastic</h2>
@@ -530,71 +530,71 @@
           <h2 class="fw-bold w-75">Scroll right for yum →</h2>
         </div>
         <div class="col-auto mw-none">
-          <img src="/assets/images/index/slide-beeftikka.webp"
+          <img src="{{url}}/assets/images/index/slide-beeftikka.webp"
             alt="Beef tikka plate served with tabouleh, rice, and hummus, alongside a cheese flatbread, a bowl of lentil soup, and a lemon wedge"
             class="h-700" height="700" width="700" loading="lazy">
         </div>
         <div class="col-auto mw-none">
-          <img src="/assets/images/index/slide-platemix3.webp"
+          <img src="{{url}}/assets/images/index/slide-platemix3.webp"
             alt="Lentil soup, grilled chicken tikka, and savory meat flatbread served together" class="h-700"
             height="700" width="700" loading="lazy">
         </div>
         <div class="col-auto mw-none">
-          <img src="/assets/images/index/slide-platemix1.webp"
+          <img src="{{url}}/assets/images/index/slide-platemix1.webp"
             alt="Chicken shawarma and beef gyro mixed plate with yellow rice, hummus, tabouleh, and sauces"
             class="h-700" loading="lazy" height="700" width="700">
         </div>
         <div class="col-auto mw-none">
-          <img src="/assets/images/index/slide-gyrosandwich.webp"
+          <img src="{{url}}/assets/images/index/slide-gyrosandwich.webp"
             alt="Gyro sandwich with roasted meat wrapped in soft pita bread" class="h-700" loading="lazy" height="700"
             width="700">
         </div>
         <div class="col-auto mw-none">
-          <img src="/assets/images/index/slide-creamchop.webp"
+          <img src="{{url}}/assets/images/index/slide-creamchop.webp"
             alt="Breaded, golden-fried chicken breast slices on a plate, crunchy and delicious" class="h-700"
             loading="lazy" height="700" width="700">
         </div>
         <div class="col-auto mw-none">
-          <img src="/assets/images/index/slide-shawarmasandwich.webp"
+          <img src="{{url}}/assets/images/index/slide-shawarmasandwich.webp"
             alt="Shawarma sandwich with thinly sliced marinated chicken wrapped in special pita bread" class="h-700"
             loading="lazy" height="700" width="700">
         </div>
         <div class="col-auto mw-none">
-          <img src="/assets/images/index/slide-veggieflatbread.webp"
+          <img src="{{url}}/assets/images/index/slide-veggieflatbread.webp"
             alt="Flatbread topped with fresh peppers, onions, and melted cheese, a vegetable lover's delight"
             class="h-700" loading="lazy" height="700" width="700">
         </div>
         <div class="col-auto mw-none">
-          <img src="/assets/images/index/slide-falafelsandwich.webp"
+          <img src="{{url}}/assets/images/index/slide-falafelsandwich.webp"
             alt="Falafel sandwich with crispy falafel balls, fresh vegetables, and sauce wrapped in pita bread"
             class="h-700" loading="lazy" height="700" width="700">
         </div>
         <div class="col-auto mw-none">
-          <img src="/assets/images/index/slide-salads2.webp"
+          <img src="{{url}}/assets/images/index/slide-salads2.webp"
             alt="A variety of Tigris salads displayed on a table, served with sauces on the side" class="h-700"
             loading="lazy" height="700" width="700">
         </div>
         <div class="col-auto mw-none">
-          <img src="/assets/images/index/slide-platemix2.webp"
+          <img src="{{url}}/assets/images/index/slide-platemix2.webp"
             alt="Chicken shawarma flatbread served alongside a beef kabob plate" class="h-700" height="700" width="700"
             loading="lazy">
         </div>
         <div class="col-auto mw-none">
-          <img src="/assets/images/index/slide-sides.webp"
+          <img src="{{url}}/assets/images/index/slide-sides.webp"
             alt="A variety of Tigris salads displayed on a table, including hummus, baba ghanoug, tabouleh, and beet salad"
             class="h-700" loading="lazy" height="700" width="700">
         </div>
         <div class="col-auto mw-none">
-          <img src="/assets/images/index/slide-tikkaplate.webp"
+          <img src="{{url}}/assets/images/index/slide-tikkaplate.webp"
             alt="Succulent grilled chicken tikka skewers seasoned with bold spices" class="h-700" loading="lazy"
             height="700" width="700">
         </div>
         <div class="col-auto mw-none">
-          <img src="/assets/images/index/slide-shawarmaplate.webp" alt="chicken shawarma plate" class="h-700"
+          <img src="{{url}}/assets/images/index/slide-shawarmaplate.webp" alt="chicken shawarma plate" class="h-700"
             loading="lazy" height="700" width="700">
         </div>
         <div class="col-auto mw-none">
-          <img src="/assets/images/index/slide-salad.webp"
+          <img src="{{url}}/assets/images/index/slide-salad.webp"
             alt="Greek salad with romaine, tomatoes, onions, olives, feta, and lemon vinaigrette" class="h-700"
             loading="lazy" height="700" width="700">
         </div>
@@ -648,7 +648,7 @@
   {{> footer}}
 
   {{!-- JS --}}
-  <script src="/assets/js/homeAnimation.js" defer></script>
-  <script src="/assets/js/jarallax.js" defer></script>
-  <script src="/assets/js/scrollbar.js" defer></script>
+  <script src="{{url}}/assets/js/homeAnimation.js" defer></script>
+  <script src="{{url}}/assets/js/jarallax.js" defer></script>
+  <script src="{{url}}/assets/js/scrollbar.js" defer></script>
 </body>

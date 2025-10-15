@@ -1,4 +1,3 @@
-// src/assets/js/contact.js
 import { initializeForm } from './formHandler.js';
 
 document.addEventListener('DOMContentLoaded', function () {
