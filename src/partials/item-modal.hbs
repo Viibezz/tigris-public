@@ -1,0 +1,41 @@
+<div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle"
+  aria-describedby="modalDesc" role="dialog">
+
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content rounded-4 bg-white position-relative shadow-lg">
+  
+      <button type="button" class="btn-close position-absolute start-0 zindex-tooltip bg-white p-1"
+        data-bs-dismiss="modal" aria-label="Back"></button>
+
+      <div id="orderSpinner" class="position-absolute top-50 start-50 translate-middle visually-hidden"
+        aria-hidden="true">
+        <div class="spinner-border text-danger" role="status" aria-label="Loading"></div>
+      </div>
+
+      <div id="modalBodyContent" class="modal-body text-center p-4 pb-3">
+        <figure class="mx-auto mb-3 ratio ratio-4x3 rounded-3 overflow-hidden" style="max-width: 720px;">
+          <a id="zoomTrigger" class="cursor-zoom-in d-block w-100 h-100" data-fancybox="item-image" href=""
+            data-caption="">
+            <!-- Zoom icon -->
+            <div id="item-modal-zoom-icon" class="gallery-zoom-icon position-absolute">
+              <i class="bi bi-zoom-in"></i>
+            </div>
+            {{!-- modal image --}}
+            <img id="modalImage" class="w-100 h-100 object-fit-cover" alt="Tigris Mediterranean Grille menu item" loading="eager"
+              decoding="async" />
+          </a>
+          <figcaption id="imageCaption" class="visually-hidden"></figcaption>
+        </figure>
+
+        <div id="modalContainer" class="container pt-1">
+          <h2 id="modalTitle" class="fw-bold fs-3"></h2>
+          <p id="modalDesc" class="fs-6 fst-italic p-2 mb-2"></p>
+          <div class="d-inline-flex justify-content-center align-items-center gap-2">
+            <span id="modalPrice" class="fw-bold fs-6"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

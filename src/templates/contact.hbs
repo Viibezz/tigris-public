@@ -1,0 +1,160 @@
+{{> header title="Contact Us | Tigris Mediterranean Grille" description="Have a question or craving? Reach out, visit us, or place an order. We're here to make your experience Fresh, Fast, Fantastic!" pathname="/contact/"}}
+
+{{!-- JSON-LD structured data --}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Us",
+  "description": "Contact page for {{company}}",
+  "url": "{{url}}/contact",
+  "mainEntity": {
+    "@type": "Restaurant",
+    "name": "{{company}}",
+    "url": "{{url}}",
+    "telephone": "{{phone}}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{street}}",
+      "addressLocality": "{{city}}",
+      "addressRegion": "{{state}}",
+      "postalCode": "{{zip}}",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "{{facebook}}",
+      "{{instagram}}",
+      "{{tiktok}}",
+      "{{yelp}}",
+      "{{google}}"
+    ]
+  }
+}
+</script>
+
+
+{{!-- reCAPTCHA v3 --}}
+<script src="https://www.google.com/recaptcha/api.js?render=6Ld86ZEqAAAAAMwBvUsyfUQ3ISKsi2f9_RFAbzcs"></script>
+
+<body>
+  {{!-- Navbar --}}
+  {{> navbar}}
+
+  {{!-- Restaurant Info --}}
+  <div class="container pt-5 mw-100">
+    <div class="row d-flex justify-content-center">
+
+      <div class="col-md-4 d-flex flex-column align-items-center mb-4 w-auto">
+        <h3 class="mb-3">Contact Us</h3>
+        <div class="contact-form w-100 bg-brand-primary ">
+          <form class="p-4">
+            <input type="hidden" name="recaptcha-token" id="recaptcha-token" />
+            <input type="hidden" name="formtype" value="contact-us" />
+            <div class="row mb-3">
+              <div class="mb-2 col-6 d-flex flex-column">
+                <label for="contact-firstname" class="text-white">First Name <span
+                    class="required-indicator">*</span></label>
+                <input type="text" class="form-control form-input contact-form-input" id="contact-firstname"
+                  name="contactfirstname" required>
+              </div>
+              <div class="mb-2 col-6 d-flex flex-column">
+                <label for="contact-lastname" class="text-white">Last Name <span
+                    class="required-indicator">*</span></label>
+                <input type="text" class="form-control form-input contact-form-input" id="contact-lastname"
+                  name="contactlastname" required>
+              </div>
+            </div>
+            <label for="contact-email" class="text-white">Email Address <span class="required-indicator">*</span></label>
+            <input type="email" class="mb-3 form-control form-input contact-form-input" id="contact-email"
+              name="contactemail" required>
+            <label for="contact-phone" class="text-white">Phone <span class="required-indicator">*</span></label>
+            <input type="tel" class="mb-3 form-control form-input contact-form-input" id="contact-phone"
+              name="contactphone" required>
+            <label for="contact-message" class="text-white">Message <span class="required-indicator">*</span></label>
+            <textarea class="mb-4 form-control form-input contact-form-input" id="contact-message" rows="4"
+              name="contactmessage" required></textarea>
+            <center><button type="submit" class="btn btn-danger w-100">SUBMIT</button></center>
+          </form>
+        </div>
+        <!-- loading spinner -->
+        {{> loading-spinner spinnerText="Submitting your inquiry..."}}
+      </div>
+
+      <div class="text-center py-3">
+        <iframe id="google-map"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13410.210757627956!2d-117.1304295!3d32.8306151!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x39c5d62b7baaf06!2sTigris%20Mediterranean%20Grille!5e0!3m2!1sen!2sus!4v1616021732440!5m2!1sen!2sus"
+          width="95%" height="450" allowfullscreen="" title="Google Map showing directions to Tigris Mediterranean Grille"
+          loading="lazy"></iframe>
+      </div>
+
+
+      <div class="mt-4 row d-flex justify-content-around text-center">
+
+        <div class="col-sm-6 col-md-5 d-flex flex-column mb-4 mb-md-0">
+          <h3>HOURS OF OPERATION</h3>
+          <div class="hours-list">
+            <p><span class="day">Monday:</span> <span class="time ml-2">10 AM - 7 PM</span></p>
+            <p><span class="day">Tuesday:</span> <span class="time ml-2">10 AM - 7 PM</span></p>
+            <p><span class="day">Wednesday:</span> <span class="time ml-2">10 AM - 7 PM</span></p>
+            <p><span class="day">Thursday:</span> <span class="time ml-2">10 AM - 7 PM</span></p>
+            <p><span class="day">Friday:</span> <span class="time ml-2">10 AM - 7 PM</span></p>
+            <p><span class="day">Saturday:</span> <span class="time ml-2">10 AM - 7 PM</span></p>
+            <p><span class="day">Sunday:</span> <span class="time ml-2">Closed</span></p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-5 d-flex flex-column mb-4 mb-md-0">
+          <h3 class="">LET'S CONNECT</h3>
+          <div class="hours-list">
+            <p>
+              <a aria-label="Follow us on Facebook" class="link-hover fs-5 opacity-75 bi-facebook- text-decoration-none"
+                href="{{facebook}}">
+                <i class="bi bi-facebook"></i>
+                <span class="time">Facebook</span>
+              </a>
+            </p>
+            <p>
+              <a aria-label="Follow us on Instagram"
+                class="link-hover fs-5 opacity-75 bi-instagram-purple- text-decoration-none" href="{{instagram}}">
+                <i class="bi bi-instagram"></i>
+                <span class="time">Instagram</span>
+              </a>
+            </p>
+            <p>
+              <a aria-label="View our TikTok page" class="link-hover fs-5 opacity-75 text-decoration-none"
+                href="{{tiktok}}">
+                <i class="bi bi-tiktok"></i>
+                <span class="time">TikTok</span>
+              </a>
+            </p>
+            <p>
+              <a aria-label="View our Yelp page" class="link-hover fs-5 opacity-75 bi-yelp- text-decoration-none"
+                href="{{yelp}}">
+                <i class="bi bi-yelp"></i>
+                <span class="time">Yelp!</span>
+              </a>
+            </p>
+            <p>
+              <a aria-label="Read our Google Reviews" class="link-hover fs-5 opacity-75 bi-google- text-decoration-none"
+                href="{{google}}">
+                <i class="bi bi-google day"></i>
+                <span class="time">Google</span>
+              </a>
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  {{!-- Alert Modal --}}
+  {{> alert-modal}}
+  
+  {{!-- Footer --}}
+  {{> footer}}
+  
+  {{!-- js --}}
+  <script type="module" src="/assets/js/contact.js"></script>
+</body>

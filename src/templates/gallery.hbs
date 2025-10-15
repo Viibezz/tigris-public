@@ -1,0 +1,117 @@
+{{> header title="Gallery | Tigris Mediterranean Grille - A Feast for the Senses" description="See the vibrant dishes, warm smiles, and inviting atmosphere that make Tigris so loved. Every photo tells a story of flavor and passion." pathname="/gallery/"}}
+
+<body>
+  {{!-- Navbar --}}
+  {{> navbar}}
+
+  <!-- Gallery Hero Section -->
+  <section class="gallery-hero">
+    <div class="container">
+      <div class="gallery-hero-content">
+        {{!-- <div class="gallery-hero-icon">
+          <i class="bi bi-camera-fill"></i>
+        </div> --}}
+        <h1 class="gallery-title pt-5">
+          A Feast for the Eyes
+        </h1>
+        <p class="gallery-subtitle pb-4">
+          Witness the richness of our Mediterranean heritage—grilled, plated, and served with heart.
+        </p>
+        <div class="gallery-accent-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="gallery-main">
+    <div class="container">
+      <!-- Gallery Items -->
+      <div class="gallery-grid">
+        {{#each gallery_items}}
+        <div class="gallery-item">
+          <div class="gallery-card">
+            <a href="{{thumb1200}}"
+               data-fancybox="gallery"
+               data-caption="{{caption}}"
+               aria-label="View larger image of {{alt_text}}"
+               class="gallery-link">
+              <div class="gallery-image-container">
+                <img 
+                  srcset="{{thumb400}} 400w, 
+                          {{thumb800}} 800w, 
+                          {{item.thumb1200}} 1200w"
+                  sizes="(max-width: 768px) 400px, 400px"
+                  src="{{thumb400}}"
+                  width="400" height="400"
+                  alt="{{alt_text}}"
+                  loading="lazy"
+                />     
+                <div class="gallery-overlay">
+                  <div class="gallery-zoom-icon">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <div class="gallery-shine"></div>
+                </div>
+              </div>
+              <div class="gallery-content pb-0">
+                <h4 class="gallery-item-title">{{name}} {{category}}</h4>
+                <div class="gallery-accent"></div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  {{!-- Footer --}}
+  {{> footer}}
+
+  {{!-- js --}}
+  <script src="/assets/js/gallery.js"></script>
+
+  <script>
+    // Get the inlined_gallery_items_json data from the context defined in index.py
+    window.tigrisGalleryItems = {{{inlined_gallery_items_json}}};
+
+    // Inject JSON-LD structured data for SEO
+    // gallery-schema.js
+    (() => {
+      const galleryItems = window.tigrisGalleryItems || [];
+      const siteUrl = window.__SITE_URL__ || "";
+
+      if (!galleryItems.length) return;
+
+      // Generate CollectionPage JSON-LD
+      const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Gallery",
+        "description": "A feast for the eyes — explore Tigris Mediterranean Grille's signature dishes, warm ambiance, and catering highlights.",
+        "url": siteUrl + "/gallery",
+        "publisher": {
+          "@type": "Restaurant",
+          "name": window.__COMPANY__ || "Tigris Mediterranean Grille",
+          "url": siteUrl
+        },
+        "hasPart": galleryItems.map(item => ({
+          "@type": "ImageObject",
+          "name": `${item.name} ${item.category || ""}`.trim(),
+          "caption": item.caption || "",
+          "description": item.alt_text || "",
+          "contentUrl": item.thumb1200 ? siteUrl + item.thumb1200 : undefined,
+          "thumbnailUrl": item.thumb400 ? siteUrl + item.thumb400 : undefined
+        }))
+      };
+
+      // Inject JSON-LD into <head>
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.textContent = JSON.stringify(jsonLd, null, 2);
+      document.head.appendChild(script);
+    })();
+
+  </script>
+  
+</body>

@@ -1,0 +1,5 @@
+pybars3
+rich
+python-dotenv
+rjsmin
+rcssmin

@@ -1,0 +1,173 @@
+{{> header title="Menu | {{company}} - A Taste of the Mediterranean" description="Explore our full menu of grilled meats, vibrant salads, and handcrafted flatbreads. Every bite is bold, fresh, and made to satisfy." pathname="/menu/"}}
+
+<body>
+  {{!-- Navbar --}}
+  {{> navbar}}
+
+  {{!-- Pickup or Delivery Options --}}
+  <section id="order-options" class="container my-5" aria-labelledby="order-cta-heading">
+    <div class="text-center p-4 p-md-5 rounded-4 shadow-sm pickup-or-delivery">
+      <h2 id="order-cta-heading" class="order-title display-6 fw-bold mb-3">
+        Pickup or Delivery
+      </h2>
+
+      <button
+        class="btn btn-link order-skip p-0 fs-5 mb-4 shadow-none text-center skip-button px-2 mt-2"
+        type="button"
+        data-target="#tigris-call-btn"
+        aria-label="Order direct — no extra fees. Skip the middleman."
+      >
+        <span class="order-skip__eyebrow d-block mb-1 fw-normal mt-2 px-2">
+          Order direct — no extra fees.
+        </span>
+
+        <span class="order-skip__callout fw-bold btn btn-outline-danger py-2 px-3 mb-2">
+          Skip the middleman
+          <span aria-hidden="true">»</span>
+        </span>
+      </button>
+
+      {{!-- Order Methods --}}
+      <div id="menu-btns" class="row row-cols-1 row-cols-lg-3 g-3 g-md-4 justify-content-center">
+        <div class="col">
+          <a id="tigris-call-btn" class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 tigris-menu-direct"
+            href="tel:+18585769999" aria-label="Call Tigris to order">
+            <span class="emoji" role="img" aria-hidden="true">📞</span>&nbsp;Order with Tigris
+          </a>
+        </div>
+        <div class="col">
+          <a id="tigris-clover-btn" class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 tigris-menu-direct"
+            href="https://www.clover.com/online-ordering/tigris-mediterranean-gri-san-diego" target="_blank"
+            rel="noopener noreferrer external"  aria-label="Customize your items and order on Clover — opens in a new tab"
+          >
+            <span class="emoji" role="img" aria-hidden="true">🍔</span>&nbsp;Customize & Order
+          </a>
+        </div>
+        <div class="col">
+          <a class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 gap-2"
+            href="https://www.grubhub.com/restaurant/tigris-mediterranean-grille-5285-overland-ave-102-san-diego/384747"
+            target="_blank" rel="noopener noreferrer external" aria-label="Order from Grubhub — opens in a new tab">
+            <span class="emoji" role="img" aria-hidden="true">🥡</span><div>Order on <span class="text-decoration-underline">Grubhub</span></div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 gap-2"
+            href="https://www.ubereats.com/store/tigris-mediterranean-grille/CLr6enSdQYq0Jzd8It7I-w" target="_blank"
+            rel="noopener noreferrer external" aria-label="Order from Uber Eats — opens in a new tab">
+            <span class="emoji" role="img" aria-hidden="true">🛍️</span><div>Order on <span class="text-decoration-underline">Uber Eats</span></div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 gap-2"
+            href="https://www.doordash.com/store/tigris-mediterranean-grille-san-diego-62609" target="_blank"
+            rel="noopener noreferrer external" aria-label="Order from DoorDash — opens in a new tab">
+            <span class="emoji" role="img" aria-hidden="true">🚗</span><div>Order on <span class="text-decoration-underline">DoorDash</span></div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 gap-2"
+            href="https://postmates.com/store/tigris-mediterranean-grille/CLr6enSdQYq0Jzd8It7I-w" target="_blank"
+            rel="noopener noreferrer external" aria-label="Order from Postmates — opens in a new tab">
+            <span class="emoji" role="img" aria-hidden="true">📦</span><div>Order on <span class="text-decoration-underline">Postmates</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-4 d-flex align-items-center flex-column">
+        <p class="menu-exit-hint text-muted mb-2">Want to browse the menu first?</p>
+        <a class="fs-6 gap-2 view-tigris-menu view-tigris-menu--pickup" 
+          href="#salads"
+          aria-label="View {{company}} menu online">
+          <span class="emoji" role="img" aria-label="Fork & Knife"><i class="bi bi-fork-knife"></i></span> View Tigris Menu
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  {{!-- Scrollspye --}}
+  {{> scrollspye}}
+
+  {{!-- Menu Grid --}}
+  <div id="main-menu" class="container-fluid text-center"></div>
+
+  <!-- Single menu item's Modal -->
+  {{> item-modal}}
+
+  {{!-- Footer --}}
+  {{>footer}}
+
+  <script>
+    // Get the inlined_full_menu_data_json data from the context defined in index.py
+    window.tigrisMenuData = {{{inlined_full_menu_data_json}}};
+
+    // Json-LD structured data for the menu
+    (() => {
+      window.__COMPANY__ = "{{company}}";
+      window.__SITE_URL__ = "{{url}}";
+    
+      const menuData = window.tigrisMenuData || [];
+      const siteUrl = window.__SITE_URL__ || "";
+      
+      if (!menuData.length) return;
+
+      // Generate Menu JSON-LD
+      const menuJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Menu",
+        "name": `${window.__COMPANY__} Menu`,
+        "url": siteUrl + "/menu",
+        "hasMenuSection": menuData.map(section => ({
+          "@type": "MenuSection",
+          "name": section.name,
+          "hasMenuItem": section.items.map(item => ({
+            "@type": "MenuItem",
+            "name": item.name,
+            "description": item.description || "",
+            "image": item.thumb ? siteUrl + item.thumb : undefined,
+            "offers": {
+              "@type": "Offer",
+              "price": item.price || "",
+              "priceCurrency": "USD"
+            }
+          }))
+        }))
+      };
+
+      // Inject JSON-LD into the head
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.textContent = JSON.stringify(menuJsonLd, null, 2);
+      document.head.appendChild(script);
+    })();
+
+
+    // Highlight the "special" call tigris buttons on click
+    document.addEventListener('DOMContentLoaded', function() {
+      const skipButton = document.querySelector('.order-skip');
+      const directButtons = document.querySelectorAll('.tigris-menu-direct');
+
+      if (skipButton && directButtons.length > 0) {
+        skipButton.addEventListener('click', function() {
+          directButtons.forEach(button => {
+            // Remove class first to allow repeated clicks to re-animate
+            button.classList.remove('highlight-direct'); 
+            void button.offsetWidth;
+            button.classList.add('highlight-direct');
+          });
+        });
+      }
+    });
+
+
+  </script>
+
+  <script>
+    window.tigrisMenuData = {{{inlined_full_menu_data_json}}};
+    window.__SITE_URL__ = "{{url}}";
+    window.__COMPANY__ = "{{company}}";
+  </script>
+
+  <script type="module" src="/assets/js/menu.js"></script>
+  <script type="module" src="/assets/js/menu-schema.js" defer></script>
+</body>

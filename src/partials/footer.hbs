@@ -1,0 +1,121 @@
+{{!-- service worker (cache + offline fallback page) --}}
+{{!-- enable after downloading cdn files to avoid caching issues --}}
+{{!-- <script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/sw.js")
+        .then((reg) => console.log("Service worker registered:", reg.scope))
+        .catch((err) => console.error("Service worker registration failed:", err));
+    });
+  }
+</script> --}}
+
+<footer class="bg-light border-top mt-5 py-4" role="contentinfo" aria-labelledby="footer-heading">
+	<div class="container-xl">
+		<h2 id="footer-heading" class="visually-hidden">Site footer</h2>
+    <h2 class="text-center">Follow Tigris</h2>
+		{{!-- Social links --}}
+		<nav aria-label="Tigris social links" class="mt-3 mt-md-0 d-flex justify-content-center">
+			{{> social-links isFooter=true}}
+		</nav>
+
+    {{!-- Dropdowns --}}
+    <div id="site-footer">
+      <div class="container py-4" id="footerContent" aria-label="Footer">
+        <!-- Desktop / lg+ : columns -->
+        <div class="d-none d-lg-flex justify-content-between gap-5">
+          <!-- Company -->
+          <section class="flex-grow-1" aria-labelledby="footer-company-h">
+            <h2 id="footer-company-h" class="h6 text-uppercase fw-bold mb-3">{{company}}</h2>
+            <ul class="list-unstyled small mb-0">
+              <li class="mb-1">
+                <address class="m-0">
+                  <a  aria-label="Get directions to our address (opens in new tab)"
+                    href="https://maps.google.com/maps/dir//Tigris+Mediterranean+Grille+5285+Overland+Ave+%23102+San+Diego,+CA+92123/@32.8306151,-117.1304295,14z/data=!4m5!4m4!1m0!1m2!1m1!1s0x80dbffb46eb566e1:0x39c5d62b7baaf06"
+                    target="_blank" rel="noopener noreferrer">
+                    5285 Overland Ave #102, San Diego, CA 92123
+                  </a>
+                </address>
+              </li>
+              <li class="mb-1">
+                <a  href="tel:{{phone}}" aria-label="Call us at {{phone}}">{{phone}}</a>
+              </li>
+              <li>
+                <a  href="mailto:{{email}}" aria-label="Email us at {{email}}">{{email}}</a>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Legal -->
+          <section class="flex-grow-1" aria-labelledby="footer-legal-h">
+            <h2 id="footer-legal-h" class="h6 text-uppercase fw-bold mb-3">Legal</h2>
+            <ul class="list-unstyled small mb-0">
+              <li class="mb-1"><a  href="/terms">Terms</a></li>
+              <li><a  href="/privacy">Privacy</a></li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- Mobile / < lg : collapsible groups -->
+        <div class="d-lg-none">
+          <hr class="footer-hr my-2" aria-hidden="true">
+
+          <!-- Company (mobile) -->
+          <button class="footer-accordion btn  w-100 d-flex justify-content-between align-items-center text-start py-3 px-0 shadow-none border-0"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#footerCompany"
+                  aria-expanded="false"
+                  aria-controls="footerCompany">
+            <span class="fw-bold text-capitalize">{{company}}</span>
+            <i class="bi bi-chevron-down ms-2"></i>
+          </button>
+          <div id="footerCompany" class="collapse" data-bs-parent="#footerContent">
+            <ul class="list-unstyled ps-2 pb-3 mb-0" aria-labelledby="footer-company-h">
+              <li class="mb-1">
+                <address class="m-0">
+                  <a  aria-label="Get directions to our address (opens in new tab)"
+                    href="https://maps.google.com/maps/dir//Tigris+Mediterranean+Grille+5285+Overland+Ave+%23102+San+Diego,+CA+92123/@32.8306151,-117.1304295,14z/data=!4m5!4m4!1m0!1m2!1m1!1s0x80dbffb46eb566e1:0x39c5d62b7baaf06"
+                    target="_blank" rel="noopener noreferrer">
+                    5285 Overland Ave #102, San Diego, CA 92123
+                  </a>
+                </address>
+              </li>
+              <li class="mb-1"><a  href="tel:{{phone}}">{{phone}}</a></li>
+              <li><a  href="mailto:{{email}}">{{email}}</a></li>
+            </ul>
+          </div>
+
+          <hr class="footer-hr my-2" aria-hidden="true">
+
+          <!-- Legal (mobile) -->
+          <button class="footer-accordion btn  w-100 d-flex justify-content-between align-items-center text-start py-3 px-0 shadow-none border-0"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#footerLegal"
+                  aria-expanded="false"
+                  aria-controls="footerLegal">
+            <span class="fw-bold text-capitalize">Legal</span>
+            <i class="bi bi-chevron-down ms-2"></i>
+          </button>
+          <div id="footerLegal" class="collapse" data-bs-parent="#footerContent">
+            <ul class="list-unstyled ps-2 pb-3 mb-0" aria-labelledby="footer-legal-h">
+              <li class="mb-1"><a  href="/terms">Terms</a></li>
+              <li><a  href="/privacy">Privacy</a></li>
+            </ul>
+          </div>
+
+          <hr class="footer-hr my-2" aria-hidden="true">
+        </div>
+
+        <!-- Bottom line -->
+        <div class="small text-muted pt-3 border-top">
+          © <time id="year">{{year}}</time> {{company}}
+        </div>
+      </div>
+    </div>
+
+    {{> backToTop}}
+	</div>
+</footer>

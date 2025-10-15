@@ -1,0 +1,84 @@
+<header id="main-navbar" class="position-sticky {{#if (and_ (nq page 'catering') (nq page 'menu'))}}{{/if}}">
+  <nav class="navbar navbar-expand-xl navbar-dark bg-brand-primary">
+    <div class="container-fluid">
+      <button id="main-navbar-toggler" class="navbar-toggler collapsed order-xl-2" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand brand-box pe-1 pe-xl-0">
+        <img
+          srcset="/assets/images/logo/red_logo_120x85.jpeg 1x,
+                  /assets/images/logo/red_logo_240x170.jpeg 2x"
+          src="/assets/images/logo/red_logo_120x85.jpeg"
+          alt="{{company}} logo"
+          width="100" 
+          height="71"
+          class="brand-logo" 
+          decoding="async"
+        >
+      </a>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+        <ul class="navbar-nav d-flex justify-content-center navbarCollapse px-3">
+          <li class="nav-item px-2">
+            <a class="nav-link btn-outline-success" href="/">
+              Home
+            </a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link btn-outline-success" href="/menu?scrollTo=salads">
+              Menu
+            </a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link btn-outline-success" href="/gallery">
+              Gallery
+            </a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="/catering">
+              Catering
+            </a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="/our-story">
+              Our Story
+            </a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="/contact">
+              Contact
+            </a>
+          </li>
+          <li class="nav-item px-2 dropdown">
+            <a class="nav-link dropdown-toggle"
+              href="#"
+              id="socialDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              data-bs-display="static"
+              data-bs-boundary="viewport"
+              aria-expanded="false">
+              Follow
+            </a>
+            <ul class="dropdown-menu zindex-dropdown bg-brand-primary px-2"
+                aria-labelledby="socialDropdown">
+              <li class="d-flex justify-content-between align-items-center">
+                {{> social-links isHeader=true}}
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      {{!-- order button --}}
+      <a href="/menu?scrollTo=order-options" id="nav-order-button" class="btn">
+        Order
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script src="/assets/js/navbar.js"></script>

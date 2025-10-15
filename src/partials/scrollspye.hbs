@@ -1,0 +1,18 @@
+<nav class="menu-nav-container mt-1 d-flex justify-content-center sticky-top" id="menu-scrollspy-nav" aria-label="Menu categories">
+  <ul id="menu-nav" class="m-0 p-0 my-2" role="tablist">
+    <li data-target="salads" class="nav-link" role="tab" tabindex="0" aria-label="Scroll to Salads">Salads</li>
+    <li data-target="flatbreads" class="nav-link" role="tab" tabindex="0" aria-label="Scroll to Flatbreads">Flatbreads
+    </li>
+
+    {{#if (eq page 'menu')}}
+    <li data-target="plates" class="nav-link" role="tab" tabindex="0" aria-label="Scroll to Plates">Plates</li>
+    <li data-target="sandwiches" class="nav-link" role="tab" tabindex="0" aria-label="Scroll to Sandwiches">Sandwiches
+    </li>
+    {{else}}
+    <li data-target="entrees" class="nav-link" role="tab" tabindex="0" aria-label="Scroll to Entrees">Entrees</li>
+    <li data-target="extras" class="nav-link" role="tab" tabindex="0" aria-label="Scroll to Extras">Extras</li>
+    {{/if}}
+
+    <li data-target="sides" class="nav-link" role="tab" tabindex="0" aria-label="Scroll to Sides">Sides</li>
+  </ul>
+</nav>

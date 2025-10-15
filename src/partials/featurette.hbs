@@ -1,0 +1,44 @@
+{{#if image_align_right}}
+<div class="row featurette">
+  <div class="col-md-7 scroll-animate">
+    <h2 class="fw-bold lh-1 pb-2">{{{title}}}</h2>
+    <p>{{{text}}}</p>
+    {{#if quote}}
+    <blockquote class="text-muted fst-italic">
+      {{{quote}}}
+    </blockquote>
+    {{/if}}
+    {{#if button_text}}
+    <button onclick="window.location.href='{{button_url}}'"
+      class="btn btn-width250 btn-danger my-3">{{button_text}}</button>
+    {{/if}}
+  </div>
+  <div class="col-md-5 d-flex justify-content-center">
+    <div class="jarallax" role="img" aria-label="{{image_alt}}"
+      style="background-image: url('{{image_url}}'); height:500px; width:100%;">
+    </div>
+  </div>
+</div>
+{{else}}
+<div class="row featurette flex-md-row flex-column-reverse">
+  <div class="col-md-5 d-flex justify-content-center">
+    <div class="jarallax" role="img" aria-label="{{image_alt}}"
+      style="background-image: url('{{image_url}}'); height:500px; width:100%;">
+    </div>
+  </div>
+  <div class="col-md-7 scroll-animate">
+    <h2 class="fw-bold lh-1 pb-2">{{{title}}}</h2>
+    <p>{{{text}}}</p>
+    {{#if quote}}
+    <blockquote class="text-muted fst-italic">
+      {{{quote}}}
+    </blockquote>
+    {{/if}}
+    {{#if button_text}}
+    <button onclick="window.location.href='{{button_url}}'"
+      class="btn btn-width250 btn-danger my-3">{{button_text}}</button>
+    {{/if}}
+  </div>
+</div>
+{{/if}}
+<hr class="featurette-divider scroll-animate">
