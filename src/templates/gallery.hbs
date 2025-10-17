@@ -30,18 +30,18 @@
         {{#each gallery_items}}
         <div class="gallery-item">
           <div class="gallery-card">
-            <a href="{{url}}{{thumb1200}}"
+            <a href="{{thumb1200}}"
                data-fancybox="gallery"
                data-caption="{{caption}}"
                aria-label="View larger image of {{alt_text}}"
                class="gallery-link">
               <div class="gallery-image-container">
                 <img 
-                  srcset="{{url}}{{thumb400}} 400w, 
-                          {{url}}{{thumb800}} 800w, 
-                          {{url}}{{thumb1200}} 1200w"
+                  srcset="{{thumb400}} 400w, 
+                          {{thumb800}} 800w, 
+                          {{thumb1200}} 1200w"
                   sizes="(max-width: 768px) 400px, 400px"
-                  src="{{url}}{{thumb400}}"
+                  src="{{thumb400}}"
                   width="400" height="400"
                   alt="{{alt_text}}"
                   loading="lazy"
