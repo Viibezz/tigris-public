@@ -30,7 +30,7 @@ function handleMenuData(menu) {
   
   // Scroll to catering menu button
   const btnCateringMenu = document.getElementById("btn-catering-menu");
-  const cateringMenu = document.getElementById("catering-menu");
+  const cateringMenu = document.getElementById("catering-menu-heading");
   if (btnCateringMenu && cateringMenu) {
     btnCateringMenu.addEventListener("click", () => {
       const mainNavHeightElement = document.querySelector("header");

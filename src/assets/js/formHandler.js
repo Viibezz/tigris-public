@@ -2,7 +2,6 @@ import { showAlert } from './alertModal.js';
 
 export function initializeForm(formSelector, recaptchaSiteKey, formApiUrl) {
 	const form = document.querySelector(formSelector);
-	const loadingSpinner = document.getElementById('loading-spinner');
 
 	if (!form) {
 		console.error(`Form with selector "${formSelector}" not found.`);
