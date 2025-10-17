@@ -212,9 +212,9 @@ def static_content_builder() -> None:
                                 "category": item.get("category"),
                                 "name": item.get("name", "Untitled Item"),
                                 "alt_text": item.get("name", "Gallery Image"),
-                                "thumb400": item["thumb1200"],
-                                "thumb800": item["thumb1200"],
-                                "thumb1200": item["thumb1200"],
+                                "thumb400": "/" + item["thumb400"],
+                                "thumb800": "/" + item["thumb800"],
+                                "thumb1200": "/" + item["thumb1200"],
                                 "caption": item.get("description", item.get("name", "No caption provided."))
                             })
             context["gallery_items"] = gallery_items_list
