@@ -217,9 +217,9 @@ def static_content_builder() -> None:
                                 "thumb1200": "/" + item["thumb1200"],
                                 "caption": item.get("description", item.get("name", "No caption provided."))
                             })
-            context["gallery_items"] = gallery_items_list
-            console.log(f"Prepared {len(gallery_items_list)} gallery items from menu data for gallery page.")
             # Inline gallery items as JSON string for client-side JavaScript
+            prepend_base_url_to_images(gallery_items_list, base_url)
+            context["gallery_items"] = gallery_items_list
             context["inlined_gallery_items_json"] = json.dumps(gallery_items_list)
         
         elif context["page"] == "menu" and loaded_menu_data:    
