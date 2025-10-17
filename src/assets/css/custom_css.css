@@ -2412,6 +2412,12 @@ section[aria-labelledby="reviews-heading"]::before {
   color: red;
 }
 
+#contact-us-form button[type="submit"]:hover,
+#contact-us-form button[type="submit"]:active {
+  background: #fdf0d5;
+  color: var(--brand-primary);
+}
+
 .contact-form {
   border-radius: var(--radius-lg);
 }
@@ -2665,7 +2671,8 @@ section[aria-labelledby="reviews-heading"]::before {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-#inquireModal .btn-close {
+#inquireModal .btn-close,
+#custom-alert .btn-close {
   /* border-radius: 50%; */
   width: 40px;
   height: 40px;
@@ -2676,7 +2683,8 @@ section[aria-labelledby="reviews-heading"]::before {
   border: 1px solid rgba(255,255,255,.55);
 }
 
-#inquireModal .btn-close:hover {
+#inquireModal .btn-close:hover,
+#custom-alert .btn-close:hover {
   border-color: rgba(255, 255, 255, 0.5);
   transform: scale(1.1);
 }

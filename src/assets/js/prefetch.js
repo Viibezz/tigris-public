@@ -23,7 +23,7 @@
  */
 
 (function () {
-  const PREFETCH_TARGETS = ['/menu', '/catering'];
+  const PREFETCH_TARGETS = ['/menu/', '/catering/'];
 
   /**
    * Create a <link rel="prefetch"> for the given URL.

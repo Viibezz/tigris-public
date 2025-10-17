@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>{{url}}/</loc></url>
-  <url><loc>{{url}}/menu</loc></url>
-  <url><loc>{{url}}/catering</loc></url>
-  <url><loc>{{url}}/gallery</loc></url>
-  <url><loc>{{url}}/our-story</loc></url>
-  <url><loc>{{url}}/contact</loc></url>
-  <url><loc>{{url}}/privacy</loc></url>
-  <url><loc>{{url}}/terms</loc></url>
-  <url><loc>{{url}}/robots.txt</loc></url>
-  <url><loc>{{url}}/humans.txt</loc></url>
+  <url><loc>{{url}}</loc></url>
+  <url><loc>{{url}}menu</loc></url>
+  <url><loc>{{url}}catering</loc></url>
+  <url><loc>{{url}}gallery</loc></url>
+  <url><loc>{{url}}our-story</loc></url>
+  <url><loc>{{url}}contact</loc></url>
+  <url><loc>{{url}}privacy</loc></url>
+  <url><loc>{{url}}terms</loc></url>
+  <url><loc>{{url}}robots.txt</loc></url>
+  <url><loc>{{url}}humans.txt</loc></url>
 </urlset>

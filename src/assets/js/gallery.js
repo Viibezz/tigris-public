@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = window.tigrisGalleryItems;
 
   if (galleryItems) {
-    console.log('Gallery data accessed from inlined script:', galleryItems);
+    // console.log('Gallery data accessed from inlined script:', galleryItems);
   } else {
     console.warn('Inlined gallery data (window.tigrisGalleryItems) not found.');
   }

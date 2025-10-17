@@ -7,7 +7,7 @@
   "@type": "ContactPage",
   "name": "Contact Us",
   "description": "Contact page for {{company}}",
-  "url": "{{url}}/contact",
+  "url": "{{url}}contact",
   "mainEntity": {
     "@type": "Restaurant",
     "name": "{{company}}",
@@ -46,7 +46,7 @@
 
       <div class="col-md-4 d-flex flex-column align-items-center mb-4 w-auto">
         <h3 class="mb-3">Contact Us</h3>
-        <div class="contact-form w-100 bg-brand-primary ">
+        <div class="contact-form w-100 bg-brand-primary" id="contact-us-form">
           <form class="p-4">
             <input type="hidden" name="recaptcha-token" id="recaptcha-token" />
             <input type="hidden" name="formtype" value="contact-us" />
@@ -82,7 +82,7 @@
 
       <div class="text-center py-3">
         <iframe id="google-map"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13410.210757627956!2d-117.1304295!3d32.8306151!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x39c5d62b7baaf06!2sTigris%20Mediterranean%20Grille!5e0!3m2!1sen!2sus!4v1616021732440!5m2!1sen!2sus"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.552689406989!2d-117.13042949999999!3d32.8306151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dbffb46eb566e1%3A0x39c5d62b7baaf06!2sTigris%20Mediterranean%20Grille!5e0!3m2!1sen!2sus!4v1760667174062!5m2!1sen!2sus"
           width="95%" height="450" allowfullscreen="" title="Google Map showing directions to Tigris Mediterranean Grille"
           loading="lazy"></iframe>
       </div>
@@ -156,5 +156,5 @@
   {{> footer}}
   
   {{!-- js --}}
-  <script type="module" src="{{url}}/assets/js/contact.js"></script>
+  <script type="module" src="{{url}}assets/js/contact.js"></script>
 </body>
