@@ -24,8 +24,8 @@ function handleMenuData(menu) {
   const formSelector = '#inquireModal form';
   initializeForm(
     formSelector,
-    '6Ld86ZEqAAAAAMwBvUsyfUQ3ISKsi2f9_RFAbzcs', // reCAPTCHA Site Key
-    'https://o3pe4aw2c8.execute-api.us-east-1.amazonaws.com/FormSubmissionHandler', // API URL
+    '6LdzKe0rAAAAAFUuRz7eXzlS65GMXPuIN4MMPsze', // reCAPTCHA Site Key
+    'https://o3pe4aw2c8.execute-api.us-east-1.amazonaws.com/FormSubmissionHandler' // API URL
   );
   
   // Scroll to catering menu button

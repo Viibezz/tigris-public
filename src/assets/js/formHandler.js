@@ -31,9 +31,16 @@ export function initializeForm(formSelector, recaptchaSiteKey, formApiUrl) {
 
 	form.addEventListener('submit', function(event) {
 		event.preventDefault();
-		if (loadingSpinner) {
-			loadingSpinner.style.display = 'block';
-		}
+
+		const submitButton = form.querySelector('button[type="submit"]');
+		const originalButtonText = submitButton.textContent;
+
+		// Show spinner on the button
+		submitButton.disabled = true;
+		submitButton.innerHTML = `
+			<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+			Sending...
+		`;
 
 		const formData = new FormData(form);
 		const data = {};
@@ -43,53 +50,43 @@ export function initializeForm(formSelector, recaptchaSiteKey, formApiUrl) {
 
 		// Refresh reCAPTCHA token before submitting
 		grecaptcha.execute(recaptchaSiteKey, { action: 'submit' }).then(function(token) {
-			if (recaptchaTokenInput) {
-				recaptchaTokenInput.value = token;
-			}
-			data['recaptcha-token'] = token; // Ensure the most recent token is in the data
+			recaptchaTokenInput.value = token;
+			data['recaptcha-token'] = token;
 
 			fetch(formApiUrl, {
 				method: 'POST',
-				headers: {
-						'Content-Type': 'application/json',
-				},
+				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(data),
 			})
 			.then((response) => {
-				if (loadingSpinner) {
-					loadingSpinner.style.display = 'none';
-				}
+				submitButton.disabled = false;
+				submitButton.textContent = originalButtonText;
+
 				if (response.ok) {
 					form.reset();
-					// If it's the catering form, close the modal
-					if (form.closest('#inquireModal')) {
-							const modal = bootstrap.Modal.getInstance(document.getElementById('inquireModal'));
-							if (modal) {
-									modal.hide();
-							}
-					}
+					const modal = bootstrap.Modal.getInstance(document.getElementById('inquireModal'));
+					if (modal) modal.hide();
 					showAlert('Thank you! Your inquiry has been successfully submitted.');
 				} else {
-						response.text().then(text => {
-							console.error('Error in submission response:', text);
-							showAlert(`Something went wrong. Please try again later.<br>Email: <a href="mailto:info@tigrisgrille.com">info@tigrisgrille.com</a><br>Phone: <a href="tel:(858) 576-9999">(858) 576-9999</a>`);
-						});
-					}
+					response.text().then(text => {
+						console.error('Error in submission response:', text);
+						showAlert(`Something went wrong. Please try again later.<br>Email: <a href="mailto:info@tigrisgrille.com">info@tigrisgrille.com</a><br>Phone: <a href="tel:(858) 576-9999">(858) 576-9999</a>`);
+					});
+				}
 			})
 			.catch((error) => {
-				if (loadingSpinner) {
-					loadingSpinner.style.display = 'none';
-				}
+				submitButton.disabled = false;
+				submitButton.textContent = originalButtonText;
 				console.error('Fetch Error:', error);
 				showAlert(`Submission failed. Please try again.<br>Email: <a href="mailto:info@tigrisgrille.com">info@tigrisgrille.com</a><br>Phone: <a href="tel:(858) 576-9999">(858) 576-9999</a>`);
 			});
 		})
 		.catch(error => {
-			if (loadingSpinner) {
-				loadingSpinner.style.display = 'none';
-			}
+			submitButton.disabled = false;
+			submitButton.textContent = originalButtonText;
 			console.error('Error executing reCAPTCHA before submit:', error);
 			showAlert('Failed to verify reCAPTCHA before submission. Please try again.');
 		});
 	});
+
 }
