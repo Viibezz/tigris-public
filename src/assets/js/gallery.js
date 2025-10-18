@@ -56,7 +56,8 @@ class TigrisGallery {
 
     // Animate gallery items
     document.querySelectorAll('.gallery-item').forEach((item, index) => {
-      item.style.setProperty('--animation-delay', `${index * 0.05}s`);
+      const delay = Math.log(index + 1) * 0.1; // lograithmic grows slowly
+      item.style.setProperty('--animation-delay', `${delay.toFixed(2)}s`);
       scrollObserver.observe(item);
     });
 
