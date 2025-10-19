@@ -197,8 +197,7 @@ def static_content_builder() -> None:
         context = dotenv_values(env_file_path) if os.path.exists(env_file_path) else {}
         context["page"] = file_name.replace(".hbs", "")
         context["year"] = datetime.datetime.now().year
-
-        # base url from env for github pages
+        context["url"]  = os.getenv("URL") or context.get("url")
         base_url = context.get("url", "")
 
         # Prepare context data based on the current page

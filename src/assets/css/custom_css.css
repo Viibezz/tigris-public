@@ -411,7 +411,6 @@ p {
 .round-imgs-trio .col-lg-4 {
   position: relative;
   padding: 2rem 1rem;
-  transition: var(--transition-fast);
 }
 
 .round-imgs-trio .col-lg-4::before {
