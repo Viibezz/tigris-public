@@ -311,7 +311,7 @@ def copy_assets() -> None:
     else: console.log(f"[yellow]Warning: Custom CSS folder not found at '{os.path.relpath(source_custom_css_folder, os.path.abspath(os.path.join(current_script_dir, os.pardir)))}'[/yellow]")
 
     # Copy asset folders like 'images' and 'menu-data'
-    folder_names_to_copy_from_assets = ["images", "menu-data"] 
+    folder_names_to_copy_from_assets = ["images", "menu-data", "videos"] 
     for folder_name in folder_names_to_copy_from_assets:
         source_folder_path = os.path.join(source_assets_base, folder_name)
         target_folder_path = os.path.join(target_assets_base, folder_name)
@@ -400,22 +400,6 @@ def copy_assets() -> None:
         else: console.log(f"[yellow]Warning: Root file '{os.path.relpath(source_file_full_path, os.path.abspath(os.path.join(current_script_dir, os.pardir)))}' not found.[/yellow]")
     
     console.log("Asset copying and full asset processing complete.")
-
-def copy_cname() -> None:
-    """
-    Copies the CNAME file from the source directory to the target directory.
-    This is important for GitHub Pages custom domain configuration.
-    """
-    source_cname_path = os.path.join(source_dir, "CNAME")
-    target_cname_path = os.path.join(target_dir, "CNAME")
-    if os.path.isfile(source_cname_path):
-        try:
-            shutil.copy2(source_cname_path, target_cname_path)
-            console.log(f"Copied CNAME to '{os.path.relpath(target_cname_path, os.path.abspath(os.path.join(current_script_dir, os.pardir)))}'.")
-        except IOError as e:
-            console.log(f"[bold red]Error copying CNAME file: {e}[/bold red]")
-    else:
-        console.log(f"[yellow]Warning: CNAME file not found at '{os.path.relpath(source_cname_path, os.path.abspath(os.path.join(current_script_dir, os.pardir)))}'[/yellow]")
 
 if __name__ == "__main__":
     console.rule("[bold green]Starting Static Site Generation[/bold green]")
