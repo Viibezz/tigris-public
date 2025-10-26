@@ -79,7 +79,6 @@ def get_partials(compiler: Compiler) -> dict:
             console.log(f"[bold red]Error compiling partial {partial_file}: {e}[/bold red]")
     return partials
 
-
 def compile_template(compiler: Compiler, source_file_path: str, context: dict, partials: dict, helpers: dict) -> str | None:
     """
     Compiles and renders a single Handlebars template file into HTML.
@@ -105,7 +104,6 @@ def compile_template(compiler: Compiler, source_file_path: str, context: dict, p
     except Exception as e:
         console.log(f"[bold red]Error compiling template {os.path.relpath(source_file_path, os.path.abspath(os.path.join(current_script_dir, os.pardir)))}: {e}[/bold red]")
         return None
-
 
 def determine_output_path(source_file: str, target_dir_base: str) -> str:
     """
@@ -142,8 +140,6 @@ def prepend_base_url_to_images(data, base_url):
     elif isinstance(data, list):
         for item in data:
             prepend_base_url_to_images(item, base_url)
-
-
 
 def static_content_builder() -> None:
     """
@@ -252,7 +248,6 @@ def static_content_builder() -> None:
         except IOError as e:
             console.log(f"[bold red]Error writing HTML file {target_html_destination}: {e}[/bold red]")
 
-
 def preprocess() -> None:
     """
     Prepares the target directory by cleaning its contents before a new build.
@@ -274,7 +269,6 @@ def preprocess() -> None:
     console.log(f"Starting preprocess: Cleaning up target directory '{os.path.relpath(target_dir, os.path.abspath(os.path.join(current_script_dir, os.pardir)))}'")
     if os.path.exists(target_dir): delete_all_in_directory(target_dir)
     else: console.log(f"Target directory '{os.path.relpath(target_dir, os.path.abspath(os.path.join(current_script_dir, os.pardir)))}' does not exist. Creating it."); os.makedirs(target_dir, exist_ok=True)
-
 
 def copy_assets() -> None:
     """
@@ -407,6 +401,21 @@ def copy_assets() -> None:
     
     console.log("Asset copying and full asset processing complete.")
 
+def copy_cname() -> None:
+    """
+    Copies the CNAME file from the source directory to the target directory.
+    This is important for GitHub Pages custom domain configuration.
+    """
+    source_cname_path = os.path.join(source_dir, "CNAME")
+    target_cname_path = os.path.join(target_dir, "CNAME")
+    if os.path.isfile(source_cname_path):
+        try:
+            shutil.copy2(source_cname_path, target_cname_path)
+            console.log(f"Copied CNAME to '{os.path.relpath(target_cname_path, os.path.abspath(os.path.join(current_script_dir, os.pardir)))}'.")
+        except IOError as e:
+            console.log(f"[bold red]Error copying CNAME file: {e}[/bold red]")
+    else:
+        console.log(f"[yellow]Warning: CNAME file not found at '{os.path.relpath(source_cname_path, os.path.abspath(os.path.join(current_script_dir, os.pardir)))}'[/yellow]")
 
 if __name__ == "__main__":
     console.rule("[bold green]Starting Static Site Generation[/bold green]")
