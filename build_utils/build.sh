@@ -2,7 +2,7 @@
 
 # Environment variables for different build targets
 dev() {
-    export URL="http://localhost:8000/"
+    export URL="http://192.168.1.81:8000/"
 }
 
 prod() {
