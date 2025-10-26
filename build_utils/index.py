@@ -213,7 +213,7 @@ def static_content_builder() -> None:
                                 "caption": item.get("description", item.get("name", "No caption provided."))
                             })
             # Inline gallery items as JSON string for client-side JavaScript
-            prepend_base_url_to_images(gallery_items_list, base_url)
+            # prepend_base_url_to_images(gallery_items_list, base_url) # Uncomment if images need base URL prepended, for prod they should stay relative
             context["gallery_items"] = gallery_items_list
             context["inlined_gallery_items_json"] = json.dumps(gallery_items_list)
         
