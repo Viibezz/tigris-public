@@ -34,7 +34,7 @@ jobs:
         run: |
           cd build_utils
           chmod +x build.sh
-          ./build.sh prod
+          ./build.sh
 
       - name: Upload build artifacts
         uses: actions/upload-pages-artifact@v3
