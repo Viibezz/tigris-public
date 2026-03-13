@@ -3603,18 +3603,24 @@ blockquote {
   background: rgba(120, 0, 0, .15);
 }
 
-/* "desktop" badge inside Clover button */
+/* Clover button label wrapper — stacks label + hint vertically */
+.clover-btn-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: .4rem;
+}
+
+/* "best on desktop" sub-line */
 .clover-desktop-hint {
-  margin-left: 1rem;
-  font-size: .65rem;
-  font-weight: 500;
-  letter-spacing: .3px;
+  display: block;
+  font-size: .62rem;
+  font-weight: 400;
+  letter-spacing: .2px;
   text-transform: none;
-  opacity: .6;
-  border: 1px solid currentColor;
-  border-radius: 3px;
-  padding: 1px 5px;
-  flex-shrink: 0;
+  opacity: .65;
+  line-height: 1.3;
+  margin-top: 1px;
 }
 
 #menu-btns .btn {
