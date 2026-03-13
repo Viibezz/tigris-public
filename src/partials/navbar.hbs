@@ -24,32 +24,32 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
         <ul class="navbar-nav d-flex justify-content-center navbarCollapse px-3">
           <li class="nav-item px-2">
-            <a class="nav-link btn-outline-success" href="{{url}}">
+            <a class="nav-link btn-outline-success {{#if (eq page 'index')}}active{{/if}}" href="{{url}}">
               Home
             </a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link btn-outline-success" href="{{url}}menu?scrollTo=salads">
+            <a class="nav-link btn-outline-success {{#if (eq page 'menu')}}active{{/if}}" href="{{url}}menu?scrollTo=salads">
               Menu
             </a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link btn-outline-success" href="{{url}}gallery">
+            <a class="nav-link btn-outline-success {{#if (eq page 'gallery')}}active{{/if}}" href="{{url}}gallery">
               Gallery
             </a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link" href="{{url}}catering">
+            <a class="nav-link {{#if (eq page 'catering')}}active{{/if}}" href="{{url}}catering">
               Catering
             </a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link" href="{{url}}our-story">
+            <a class="nav-link {{#if (eq page 'our-story')}}active{{/if}}" href="{{url}}our-story">
               Our Story
             </a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link" href="{{url}}contact">
+            <a class="nav-link {{#if (eq page 'contact')}}active{{/if}}" href="{{url}}contact">
               Contact
             </a>
           </li>

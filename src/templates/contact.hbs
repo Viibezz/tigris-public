@@ -44,7 +44,7 @@
   <div class="container pt-5 mw-100">
     <div class="row d-flex justify-content-center">
 
-      <div class="col-md-4 d-flex flex-column align-items-center mb-4 w-auto">
+      <div class="col-md-6 d-flex flex-column align-items-center mb-4">
         <h3 class="mb-3">Contact Us</h3>
         <div class="contact-form w-100 bg-brand-primary" id="contact-us-form">
           <form class="p-4">
@@ -80,10 +80,11 @@
         {{> loading-spinner spinnerText="Submitting your inquiry..."}}
       </div>
 
-      <div class="text-center py-3">
+      <div class="col-md-6 d-flex flex-column align-items-center mb-4">
+        <h3 class="mb-3">Find Us</h3>
         <iframe id="google-map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.552689406989!2d-117.13042949999999!3d32.8306151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dbffb46eb566e1%3A0x39c5d62b7baaf06!2sTigris%20Mediterranean%20Grille!5e0!3m2!1sen!2sus!4v1760667174062!5m2!1sen!2sus"
-          width="95%" height="450" allowfullscreen="" title="Google Map showing directions to Tigris Mediterranean Grille"
+          width="100%" height="100%" style="min-height:400px;" allowfullscreen="" title="Google Map showing directions to Tigris Mediterranean Grille"
           loading="lazy"></iframe>
       </div>
 
@@ -91,7 +92,7 @@
       <div class="mt-4 row d-flex justify-content-around text-center">
 
         <div class="col-sm-6 col-md-5 d-flex flex-column mb-4 mb-md-0">
-          <h3>HOURS OF OPERATION</h3>
+          <h3 class="mb-3">HOURS OF OPERATION</h3>
           <div class="hours-list">
             <p><span class="day">Monday:</span> <span class="time ml-2">10 AM - 7 PM</span></p>
             <p><span class="day">Tuesday:</span> <span class="time ml-2">10 AM - 7 PM</span></p>
@@ -99,49 +100,38 @@
             <p><span class="day">Thursday:</span> <span class="time ml-2">10 AM - 7 PM</span></p>
             <p><span class="day">Friday:</span> <span class="time ml-2">10 AM - 7 PM</span></p>
             <p><span class="day">Saturday:</span> <span class="time ml-2">10 AM - 7 PM</span></p>
-            <p><span class="day">Sunday:</span> <span class="time ml-2">Closed</span></p>
+            <p><span class="day time--closed">Sunday:</span> <span class="time time--closed ml-2">Closed</span></p>
           </div>
         </div>
 
         <div class="col-sm-6 col-md-5 d-flex flex-column mb-4 mb-md-0">
-          <h3 class="">LET'S CONNECT</h3>
-          <div class="hours-list">
-            <p>
-              <a aria-label="Follow us on Facebook" class="link-hover fs-5 opacity-75 bi-facebook- text-decoration-none"
-                href="{{facebook}}">
-                <i class="bi bi-facebook"></i>
-                <span class="time">Facebook</span>
-              </a>
-            </p>
-            <p>
-              <a aria-label="Follow us on Instagram"
-                class="link-hover fs-5 opacity-75 bi-instagram-purple- text-decoration-none" href="{{instagram}}">
-                <i class="bi bi-instagram"></i>
-                <span class="time">Instagram</span>
-              </a>
-            </p>
-            <p>
-              <a aria-label="View our TikTok page" class="link-hover fs-5 opacity-75 text-decoration-none"
-                href="{{tiktok}}">
-                <i class="bi bi-tiktok"></i>
-                <span class="time">TikTok</span>
-              </a>
-            </p>
-            <p>
-              <a aria-label="View our Yelp page" class="link-hover fs-5 opacity-75 bi-yelp- text-decoration-none"
-                href="{{yelp}}">
-                <i class="bi bi-yelp"></i>
-                <span class="time">Yelp!</span>
-              </a>
-            </p>
-            <p>
-              <a aria-label="Read our Google Reviews" class="link-hover fs-5 opacity-75 bi-google- text-decoration-none"
-                href="{{google}}">
-                <i class="bi bi-google day"></i>
-                <span class="time">Google</span>
-              </a>
-            </p>
-
+          <h3 class="mb-3">LET'S CONNECT</h3>
+          <div class="social-list">
+            <a aria-label="Read our Google Reviews" class="social-list__item" href="{{google}}" target="_blank" rel="noopener">
+              <i class="bi bi-google social-list__icon"></i>
+              <span>Google</span>
+              <i class="bi bi-arrow-right-short ms-auto"></i>
+            </a>
+            <a aria-label="View our Yelp page" class="social-list__item" href="{{yelp}}" target="_blank" rel="noopener">
+              <i class="bi bi-yelp social-list__icon"></i>
+              <span>Yelp!</span>
+              <i class="bi bi-arrow-right-short ms-auto"></i>
+            </a>
+            <a aria-label="View our TikTok page" class="social-list__item" href="{{tiktok}}" target="_blank" rel="noopener">
+              <i class="bi bi-tiktok social-list__icon"></i>
+              <span>TikTok</span>
+              <i class="bi bi-arrow-right-short ms-auto"></i>
+            </a>
+            <a aria-label="Follow us on Instagram" class="social-list__item" href="{{instagram}}" target="_blank" rel="noopener">
+              <i class="bi bi-instagram social-list__icon"></i>
+              <span>Instagram</span>
+              <i class="bi bi-arrow-right-short ms-auto"></i>
+            </a>
+            <a aria-label="Follow us on Facebook" class="social-list__item" href="{{facebook}}" target="_blank" rel="noopener">
+              <i class="bi bi-facebook social-list__icon"></i>
+              <span>Facebook</span>
+              <i class="bi bi-arrow-right-short ms-auto"></i>
+            </a>
           </div>
         </div>
 

@@ -84,57 +84,70 @@
   {{!-- Navbar --}}
   {{> navbar}}
 
+  {{!-- Page Hero --}}
+  <section class="story-hero">
+    <h1>Our Story</h1>
+    <div class="story-hero__underline"></div>
+    <p>From the banks of the Tigris to the shores of San Diego</p>
+  </section>
+
   <div class="container">
     {{!-- Story --}}
     <div class="row featurette pb-0 d-flex justify-content-center">
-      <h3 class="my-3">Welcome to Tigris Mediterranean Grille.</h3>
-      <p>
+      <h3 class="my-3 scroll-animate">Welcome to Tigris Mediterranean Grille.</h3>
+      <p class="scroll-animate">
         <strong>Fresh, fast, and absolutely fantastic.</strong> More than just food, every meal is prepared with purpose: to bring people together, just as it has for generations.
       </p>
 
-      <div class="text-center">
-        <h4><i class="bi bi-calendar-event fs-1"></i> 2000 <span class="text-danger">- Baghdad, Iraq</span></h4>
-        <p class="fst-italic">Where the story begins, beside the flowing Tigris River.</p>
+      <div class="story-timeline">
+        <div class="story-milestone scroll-animate">
+          <div class="story-milestone__marker">2000</div>
+          <div class="story-milestone__content">
+            <div class="story-milestone__location">Baghdad, Iraq</div>
+            <p class="story-milestone__tagline">Where the story begins, beside the flowing Tigris River.</p>
+            <p>
+              For the people of Iraq, the mighty <strong>Tigris and Euphrates</strong> are truly the waters of life, sustaining the land and its culture throughout history. Our roots trace back to the vibrant streets of Baghdad, drawing inspiration from this rich heritage where <strong>flavors run deep and hospitality is a way of life.</strong> In 2000, we opened our doors to the community, offering more than just meals; we offered a taste of home and a place to belong.
+            </p>
+            <p>
+              <strong>Then came 2003, a year that reshaped our lives and mission.</strong> As Baghdad faced unrest, our kitchen became a <strong>refuge</strong>—a place where U.S. Army personnel, embassy staff, locals, and strangers could gather. Over warm bread and sips of tea, stories were shared, <strong>differences faded, and peace was found in the comfort of food.</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="story-milestone scroll-animate">
+          <div class="story-milestone__marker">2005</div>
+          <div class="story-milestone__content">
+            <div class="story-milestone__location">Amman, Jordan</div>
+            <p class="story-milestone__tagline">A new chapter, steeped in heritage and fresh ambition.</p>
+            <p>
+              In 2005, we brought our journey to Amman, Jordan, a city that welcomed us with curiosity and open hearts. There, we explored new flavors and fresh ideas, building on our beginnings while embracing innovation and diversity. It was a time of creativity, growth, and rediscovery—a chance to evolve without ever forgetting where we came from.
+            </p>
+          </div>
+        </div>
+
+        <div class="story-milestone scroll-animate">
+          <div class="story-milestone__marker">2012</div>
+          <div class="story-milestone__content">
+            <div class="story-milestone__location">San Diego, USA</div>
+            <p class="story-milestone__tagline">New soil. New city. Same soul.</p>
+            <p>
+              In 2012, we took a leap across continents to San Diego, California, a city rich with diversity, opportunity, and flavor. Thousands of miles from home, we found familiar faces and new fans, all hungry for something <strong>authentic and real.</strong> It wasn't just about bringing food; it was about transplanting our <strong>heart</strong>—the same spirit that filled our tables in Baghdad.
+            </p>
+            <p>
+              San Diego embraced us, and we returned the love through every plate we served. Each dish is rich, vibrant, and always rooted in our story. From shawarma to salad, from pita to plate, every dish honors both our Middle Eastern heritage and the local culture we now proudly call home.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <p>
-        For the people of Iraq, the mighty <strong>Tigris and Euphrates</strong> are truly the waters of life, sustaining the land and its culture throughout history. Our roots trace back to the vibrant streets of Baghdad, drawing inspiration from this rich heritage where <strong>flavors run deep and hospitality is a way of life.</strong> In 2000, we opened our doors to the community, offering more than just meals; we offered a taste of home and a place to belong.
-      </p>
-
-      <p>
-        <strong>Then came 2003, a year that reshaped our lives and mission.</strong> As Baghdad faced unrest, our kitchen became a <strong>refuge</strong>—a place where U.S. Army personnel, embassy staff, locals, and strangers could gather. Over warm bread and sips of tea, stories were shared, <strong>differences faded, and peace was found in the comfort of food.</strong>
-      </p>
-
-      <div class="text-center">
-        <h4><i class="bi bi-calendar-event fs-1"></i> 2005 <span class="text-danger">- Amman, Jordan</span></h4>
-        <p class="fst-italic">A new chapter, steeped in heritage and fresh ambition.</p>
-      </div>
-
-      <p>
-        In 2005, we brought our journey to Amman, Jordan, a city that welcomed us with curiosity and open hearts. There, we explored new flavors and fresh ideas, building on our beginnings while embracing innovation and diversity. It was a time of creativity, growth, and rediscovery—a chance to evolve without ever forgetting where we came from.
-      </p>
-
-      <div class="text-center">
-        <h4><i class="bi bi-calendar-event fs-1"></i> 2012 <span class="text-danger">- San Diego, USA</span></h4>
-        <p class="fst-italic">New soil. New city. Same soul.</p>
-      </div>
-
-      <p>
-        In 2012, we took a leap across continents to San Diego, California, a city rich with diversity, opportunity, and flavor. Thousands of miles from home, we found familiar faces and new fans, all hungry for something <strong>authentic and real.</strong> It wasn't just about bringing food; it was about transplanting our <strong>heart</strong>—the same spirit that filled our tables in Baghdad.
-      </p>
-
-      <p>
-        San Diego embraced us, and we returned the love through every plate we served. Each dish is rich, vibrant, and always rooted in our story. From shawarma to salad, from pita to plate, every dish honors both our Middle Eastern heritage and the local culture we now proudly call home.
-      </p>
-
-      <div class="h-500 mw-600 mb-3 d-flex justify-content-center curved-image-short">
+      <div class="h-500 mw-600 mb-3 d-flex justify-content-center curved-image-short scroll-animate">
         <div class="jarallax w-100" role="img">
           <img class="jarallax-img" src="{{url}}assets/images/index/outside-1200.webp"
             alt="Outside seating area and entrance to {{company}}">
         </div>
       </div>
 
-      <p>
+      <p class="scroll-animate">
         Today, <strong>{{company}}</strong> is more than a restaurant; it's a story of resilience, connection, and the power of a shared table. Whether you're craving something exciting, something comforting, or just a taste of home, <strong>we invite you to join our story, one bite at a time.</strong>
       </p>
     </div>
@@ -145,4 +158,5 @@
 
   {{!-- js --}}
   <script src="{{url}}assets/js/jarallax.js"></script>
+  <script src="{{url}}assets/js/homeAnimation.js" defer></script>
 </body>
