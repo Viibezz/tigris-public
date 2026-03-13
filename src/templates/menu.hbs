@@ -11,6 +11,16 @@
         Pickup or Delivery
       </h2>
 
+      {{!-- Browse-first link — top of section for easy access --}}
+      <div class="mb-4 d-flex align-items-center flex-column">
+        <p class="menu-exit-hint text-muted mb-2">Want to browse the menu first?</p>
+        <a class="fs-6 gap-2 view-tigris-menu view-tigris-menu--pickup"
+          href="#salads"
+          aria-label="View {{company}} menu online">
+          <span class="emoji" role="img" aria-label="Fork & Knife"><i class="bi bi-fork-knife"></i></span> View Tigris Menu
+        </a>
+      </div>
+
       <button
         class="btn btn-link order-skip p-0 fs-5 mb-4 shadow-none text-center skip-button px-2 mt-2"
         type="button"
@@ -28,58 +38,64 @@
       </button>
 
       {{!-- Order Methods --}}
-      <div id="menu-btns" class="row row-cols-1 row-cols-lg-3 g-3 g-md-4 justify-content-center">
-        <div class="col">
-          <a id="tigris-call-btn" class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 tigris-menu-direct"
-            href="tel:+18585769999" aria-label="Call Tigris to order">
-            <span class="emoji" role="img" aria-hidden="true">📞</span>&nbsp;Order with Tigris
-          </a>
-        </div>
-        <div class="col">
-          <a id="tigris-clover-btn" class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 tigris-menu-direct"
-            href="https://www.clover.com/online-ordering/tigris-mediterranean-gri-san-diego" target="_blank"
-            rel="noopener noreferrer external"  aria-label="Customize your items and order on Clover — opens in a new tab"
-          >
-            <span class="emoji" role="img" aria-hidden="true">🍔</span>&nbsp;Customize & Order
-          </a>
-        </div>
-        <div class="col">
-          <a class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 gap-2"
-            href="https://www.grubhub.com/restaurant/tigris-mediterranean-grille-5285-overland-ave-102-san-diego/384747"
-            target="_blank" rel="noopener noreferrer external" aria-label="Order from Grubhub — opens in a new tab">
-            <span class="emoji" role="img" aria-hidden="true">🥡</span><div>Order on <span class="text-decoration-underline">Grubhub</span></div>
-          </a>
-        </div>
-        <div class="col">
-          <a class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 gap-2"
-            href="https://www.ubereats.com/store/tigris-mediterranean-grille/CLr6enSdQYq0Jzd8It7I-w" target="_blank"
-            rel="noopener noreferrer external" aria-label="Order from Uber Eats — opens in a new tab">
-            <span class="emoji" role="img" aria-hidden="true">🛍️</span><div>Order on <span class="text-decoration-underline">Uber Eats</span></div>
-          </a>
-        </div>
-        <div class="col">
-          <a class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 gap-2"
-            href="https://www.doordash.com/store/tigris-mediterranean-grille-san-diego-62609" target="_blank"
-            rel="noopener noreferrer external" aria-label="Order from DoorDash — opens in a new tab">
-            <span class="emoji" role="img" aria-hidden="true">🚗</span><div>Order on <span class="text-decoration-underline">DoorDash</span></div>
-          </a>
-        </div>
-        <div class="col">
-          <a class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 gap-2"
-            href="https://postmates.com/store/tigris-mediterranean-grille/CLr6enSdQYq0Jzd8It7I-w" target="_blank"
-            rel="noopener noreferrer external" aria-label="Order from Postmates — opens in a new tab">
-            <span class="emoji" role="img" aria-hidden="true">📦</span><div>Order on <span class="text-decoration-underline">Postmates</span></div>
-          </a>
-        </div>
-      </div>
+      <div id="menu-btns">
 
-      <div class="mt-4 d-flex align-items-center flex-column">
-        <p class="menu-exit-hint text-muted mb-2">Want to browse the menu first?</p>
-        <a class="fs-6 gap-2 view-tigris-menu view-tigris-menu--pickup" 
-          href="#salads"
-          aria-label="View {{company}} menu online">
-          <span class="emoji" role="img" aria-label="Fork & Knife"><i class="bi bi-fork-knife"></i></span> View Tigris Menu
-        </a>
+        {{!-- Direct: Call + Clover --}}
+        <div class="row row-cols-1 row-cols-sm-2 g-3 justify-content-center">
+          <div class="col">
+            <a id="tigris-call-btn" class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 tigris-menu-direct"
+              href="tel:+18585769999" aria-label="Call Tigris to order">
+              <span class="emoji" role="img" aria-hidden="true">📞</span>&nbsp;Order with Tigris
+            </a>
+          </div>
+          <div class="col">
+            <a id="tigris-clover-btn" class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 tigris-menu-direct"
+              href="https://www.clover.com/online-ordering/tigris-mediterranean-gri-san-diego" target="_blank"
+              rel="noopener noreferrer external" aria-label="Customize your items and order on Clover — opens in a new tab"
+            >
+              <span class="emoji" role="img" aria-hidden="true">🍔</span>&nbsp;Customize & Order
+              <span class="clover-desktop-hint">desktop</span>
+            </a>
+          </div>
+        </div>
+
+        {{!-- Divider --}}
+        <div class="menu-btns-divider my-3" aria-hidden="true">
+          <span>or order for delivery</span>
+        </div>
+
+        {{!-- Delivery: Grubhub, Uber Eats, DoorDash, Postmates --}}
+        <div class="row row-cols-1 row-cols-lg-4 g-2 justify-content-center">
+          <div class="col">
+            <a class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 gap-2"
+              href="https://www.grubhub.com/restaurant/tigris-mediterranean-grille-5285-overland-ave-102-san-diego/384747"
+              target="_blank" rel="noopener noreferrer external" aria-label="Order from Grubhub — opens in a new tab">
+              <span class="emoji" role="img" aria-hidden="true">🥡</span><div>Order on <span class="text-decoration-underline">Grubhub</span></div>
+            </a>
+          </div>
+          <div class="col">
+            <a class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 gap-2"
+              href="https://www.ubereats.com/store/tigris-mediterranean-grille/CLr6enSdQYq0Jzd8It7I-w" target="_blank"
+              rel="noopener noreferrer external" aria-label="Order from Uber Eats — opens in a new tab">
+              <span class="emoji" role="img" aria-hidden="true">🛍️</span><div>Order on <span class="text-decoration-underline">Uber Eats</span></div>
+            </a>
+          </div>
+          <div class="col">
+            <a class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 gap-2"
+              href="https://www.doordash.com/store/tigris-mediterranean-grille-san-diego-62609" target="_blank"
+              rel="noopener noreferrer external" aria-label="Order from DoorDash — opens in a new tab">
+              <span class="emoji" role="img" aria-hidden="true">🚗</span><div>Order on <span class="text-decoration-underline">DoorDash</span></div>
+            </a>
+          </div>
+          <div class="col">
+            <a class="btn btn-outline-danger btn-lg d-block shadow-sm py-3 fw-semibold d-flex align-items-center w-100 gap-2"
+              href="https://postmates.com/store/tigris-mediterranean-grille/CLr6enSdQYq0Jzd8It7I-w" target="_blank"
+              rel="noopener noreferrer external" aria-label="Order from Postmates — opens in a new tab">
+              <span class="emoji" role="img" aria-hidden="true">📦</span><div>Order on <span class="text-decoration-underline">Postmates</span></div>
+            </a>
+          </div>
+        </div>
+
       </div>
 
     </div>
