@@ -3126,15 +3126,12 @@ footer .socials-footer {
   font-size: 1.5rem;
   padding: .35rem .4rem;
   border-radius: 50%;
-  transition: color .2s, transform .2s, background-color .2s;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 footer .socials-footer:hover {
-  color: var(--brand-primary);
-  background-color: rgba(242, 195, 114, .25);
   transform: translateY(-3px);
 }
 
