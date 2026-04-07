@@ -1,49 +1,51 @@
 {{> header title="Tigris Mediterranean Grille | Fresh, Fast, Fantastic!" description="Savor the rich, juicy flavors of authentic Mediterranean cuisine made with love. Fresh ingredients, warm hospitality, and irresistible dishes await at Tigris." pathname="/"}}  {{!-- For og:url and canonical --}}
 
 <body>
+  {{!-- Scroll progress bar --}}
+  <div class="scroll-progress-bar" aria-hidden="true">
+    <div class="scroll-progress-fill"></div>
+  </div>
+
   {{> navbar}}
   <a class="visually-hidden-focusable" href="#main">Skip to content</a>
 
   <main id="main">
-    {{!-- CTA --}}
-    <div class="d-flex align-items-center text-center justify-content-center pt-1 pb-4 flex-column bg-brand-primary">
-      <h2 class="text-shadow text-white mb-2">Fresh. Fast. Fantastic.</h2>
-      <a class="btn btn-outline-danger col-11 col-sm-7 col-md-6 col-lg-5 col-xl-4 btn-main-menu"
-         href="{{url}}menu?scrollTo=order-options"
-         aria-label="Start an online order">
-        Order Online
-      </a>
+
+
+    {{!-- Hero / Scroll-Driven Canvas (250vh track, sticky inner) --}}
+    <div class="hero-scroll-track mb-4">
+      <section class="hero d-flex align-items-center justify-content-center text-center"
+               aria-labelledby="home-hero-heading">
+
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <div class="hero-copy">
+          <h1 id="home-hero-heading" class="text-white text-shadow hero-headline">
+            <span class="hero-title-top">TIGRIS</span>
+            <span class="hero-title-bottom">MEDITERRANEAN GRILLE</span>
+          </h1>
+          {{!-- CTA inside hero — captures ready-to-order users immediately --}}
+          <div class="hero-cta mt-3">
+            <a href="{{url}}menu?scrollTo=order-options"
+               class="btn hero-cta-btn"
+               aria-label="View the Tigris menu and order online">
+              View Menu &nbsp;→
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
 
-    {{!-- Hero / Flatbreads Parallax --}}
-    <section class="hero jarallax d-flex align-items-center justify-content-center text-center mb-4 curved-image-bottom"
-             aria-labelledby="home-hero-heading">
-      <picture class="jarallax-img">
-        {{!-- Desktop landscape (16:9) --}}
-        <source srcset="{{url}}assets/images/index/flatbreads-1920.webp 1920w,
-                        {{url}}assets/images/index/flatbreads-1280.webp 1280w,
-                        {{url}}assets/images/index/flatbreads-960.webp   960w"
-                media="(min-width: 992px)" type="image/webp">
-        {{!-- Mobile square --}}
-        <source srcset="{{url}}assets/images/index/flatbreads-480.webp 480w,
-                        {{url}}assets/images/index/flatbreads-640.webp 640w,
-                        {{url}}assets/images/index/flatbreads-760.webp 760w"
-                media="(max-width: 991.98px)" type="image/webp">
-        <img src="{{url}}assets/images/index/flatbreads-640.webp"
-             alt="A platter of Mediterranean flatbreads with assorted toppings"
-             width="643" height="643" loading="eager" decoding="async" fetchpriority="high"
-             sizes="(min-width: 992px) 992px, 100vw">
-      </picture>
-
-      <div class="hero-overlay" aria-hidden="true"></div>
-
-      <div class="hero-copy">
-        <h1 id="home-hero-heading" class="text-white display-3 text-shadow">
-          TIGRIS MEDITERRANEAN GRILLE
-        </h1>
-        {{!-- <p class="lead text-white mb-0">Authentic flavors, elevated for the modern palate.</p> --}}
-      </div>
-    </section>
+    {{!-- Social proof strip --}}
+    <div class="social-proof-strip text-center scroll-animate">
+      <span>
+        <strong>4.5★</strong> &nbsp;·&nbsp;
+        <strong>1,300+</strong> reviews across Google &amp; Yelp &nbsp;·&nbsp;
+        San Diego's favourite Mediterranean grill
+      </span>
+    </div>
 
     {{!-- Browse Menu --}}
     <h2 class="scroll-animate text-center mb-1">Browse Menu</h2>
@@ -122,114 +124,75 @@
       <div class="fake-thumb" id="fakeThumb" data-scrollbar-id="roundmenu"></div>
     </div>
 
-    {{!-- Carousel --}}
-    <div id="myCarousel" class="container-xxl carousel slide carousel-fade scroll-animate mt-5 mb-0 mb-lg-3 px-0"
-         data-bs-ride="carousel"
-         aria-roledescription="carousel"
-         aria-label="Featured dishes and calls to action">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-
-      <div class="carousel-inner">
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-          <img class="carousel-img"
-              src="{{url}}assets/images/index/slide-salads-transformed_800.webp"
-              srcset="{{url}}assets/images/index/slide-salads-transformed_400.webp 400w, {{url}}assets/images/index/slide-salads-transformed_800.webp 800w, {{url}}assets/images/index/slide-salads-transformed_1200.webp 1200w"
-              alt="Tigris salad selection with dressings"
-              loading="lazy" decoding="async" sizes="100vw">
-          <div class="carousel-overlay"></div>
-          <div class="carousel-caption caption-center">
-            <div class="cc w-100">
-              <h2 class="text-white fw-bold">A Taste of Mesopotamia</h2>
-              <p class="text-white-75">• Grilled fresh • Served fast • Made fantastic</p>
-              <a class="btn btn-danger w-75 small p-1" href="{{url}}menu?scrollTo=salads">See What's Cooking »</a>
-            </div>
+    {{!-- Dish Spotlight --}}
+    <section class="signature-dish scroll-animate">
+      <div class="container">
+        <div class="row align-items-center g-0 g-lg-5">
+          <div class="col-lg-6">
+            <img src="{{url}}assets/images/hero/beef-tikka-plate-dark.webp"
+                 alt="Beef tikka plate with saffron rice, hummus, tabbouleh and pita — Tigris Mediterranean Grille"
+                 class="w-100 signature-dish-img" loading="lazy">
           </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-          <img class="carousel-img"
-              src="{{url}}assets/images/index/slide-sandwich-mix-transformed2_800.webp"
-              srcset="{{url}}assets/images/index/slide-sandwich-mix-transformed2_400.webp 400w, {{url}}assets/images/index/slide-sandwich-mix-transformed2_800.webp 800w, {{url}}assets/images/index/slide-sandwich-mix-transformed2_1200.webp 1200w"
-              alt="Gyro, falafel, beef kabob, and chicken shawarma sandwiches"
-              loading="lazy" decoding="async" sizes="100vw">
-          <div class="carousel-overlay"></div>
-          <div class="carousel-caption caption-center">
-            <div class="cc w-100">
-              <h2 class="text-white fw-bold">Where East Meets West</h2>
-              <p class="text-white-75">Mediterranean meets memorable.</p>
-              <div class="d-flex gap-2 justify-content-center flex-wrap">
-                <a class="btn btn-outline-light w-auto small p-1" href="{{url}}our-story">Discover Our Story »</a>
-                <a class="btn btn-danger w-auto small p-1" href="{{url}}menu?scrollTo=order-options">Order Online »</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-          <img class="carousel-img"
-              src="{{url}}assets/images/index/slide-tikka_800.webp"
-              srcset="{{url}}assets/images/index/slide-tikka_400.webp 400w, {{url}}assets/images/index/slide-tikka_800.webp 800w, {{url}}assets/images/index/slide-tikka_1200.webp 1200w"
-              alt="Chicken and beef tikka plate with sauces"
-              loading="lazy" decoding="async" sizes="100vw">
-          <div class="carousel-overlay"></div>
-          <div class="carousel-caption caption-center">
-            <div class="cc w-100">
-              <h2 class="text-white fw-bold">Big Flavor, Bigger Events</h2>
-              <p class="text-white-75">You handle the guest list. We handle the rest.</p>
-              <a class="btn btn-danger w-75 small p-1" href="{{url}}catering">Private Catering »</a>
+          <div class="col-lg-6 signature-dish-copy">
+            <p class="signature-dish-label">From Our Kitchen</p>
+            <h2 class="signature-dish-title">Beef Tikka Plate</h2>
+            <p class="signature-dish-quote">
+              "The food was incredible — every single item on the plate was delicious.
+              The beef tikka, hummus, tabbouleh and rice all together is just perfect."
+            </p>
+            <small class="signature-dish-attribution">
+              — Rania K. &nbsp;·&nbsp;
+              <a href="https://www.yelp.com/biz/tigris-mediterranean-grille-san-diego"
+                 target="_blank" rel="noopener" class="link-hover">View on Yelp ⭐⭐⭐⭐⭐</a>
+            </small>
+            <div class="mt-4">
+              <a href="{{url}}menu?scrollTo=plates" class="btn btn-danger btn-lg me-2">See the Full Menu →</a>
+              <a href="{{url}}catering" class="btn btn-outline-danger btn-lg">Catering</a>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    {{!-- Round images trio --}}
+    {{!-- Brand values trio --}}
     <div class="container marketing round-imgs-trio my-3">
       <div class="row">
         <div class="col-lg-4 text-center scroll-animate">
           <img decoding="async" width="240" height="240"
-              sizes="(max-width: 991px) 80vw, 240px" 
-              srcset="{{url}}assets/images/food/beef_kabob_plate_1_1_400.jpeg 400w, 
+              sizes="(max-width: 991px) 80vw, 240px"
+              srcset="{{url}}assets/images/food/beef_kabob_plate_1_1_400.jpeg 400w,
                       {{url}}assets/images/food/beef_kabob_plate_1_1_800.jpeg 800w"
               src="{{url}}assets/images/food/beef_kabob_plate_1_1_400.jpeg"
               alt="Beef kabob plate served with hummus, yellow rice, tabbouleh, sauce, and fresh pita bread at Tigris Mediterranean Grille"
               class="round-imgs" loading="lazy" />
-          <h2 class="fw-bold pt-3">Fresh</h2>
-          <p class="pb-3 pt-1">Grilled to perfection. We combine crisp vegetables, tender proteins, and bold spices, all cooked over a flame for an unforgettable burst of flavor.</p>
+          <h2 class="fw-bold pt-3">Never Frozen</h2>
+          <p class="pb-3 pt-1">Every skewer, every plate, grilled to order. We use fresh ingredients daily — because shortcuts have no place in Mediterranean cooking.</p>
           <a class="btn btn-width250 btn-danger" href="{{url}}menu?scrollTo=plates">Browse Plates &raquo;</a>
         </div>
 
         <div class="col-lg-4 text-center scroll-animate">
-          <img decoding="async" width="240" height="240" 
-              sizes="(max-width: 991px) 80vw, 240px" 
-              srcset="{{url}}assets/images/food/tigris_salad_1_400.jpeg 400w, 
+          <img decoding="async" width="240" height="240"
+              sizes="(max-width: 991px) 80vw, 240px"
+              srcset="{{url}}assets/images/food/tigris_salad_1_400.jpeg 400w,
                       {{url}}assets/images/food/tigris_salad_1_800.jpeg 800w"
               src="{{url}}assets/images/food/tigris_salad_1_400.jpeg"
               alt="A fresh Tigris salad featuring spring greens, sweet cranberries, crunchy candied pecans, and creamy blue cheese, dressed with raspberry vinaigrette"
               class="round-imgs" loading="lazy" />
-          <h2 class="fw-bold pt-3">Fast</h2>
-          <p class="pb-3 pt-1">Your cravings, satisfied instantly. Enjoy a delicious escape with our fire-kissed dishes, perfect for a quick lunch, an easy dinner, or whenever a craving hits.</p>
+          <h2 class="fw-bold pt-3">Ready in Minutes</h2>
+          <p class="pb-3 pt-1">Fast without the compromise. Whether it's a quick lunch or a last-minute dinner, your order is ready fast and made right — every single time.</p>
           <a class="btn btn-width250 btn-danger" href="{{url}}catering">Catering Specials &raquo;</a>
         </div>
 
         <div class="col-lg-4 text-center scroll-animate">
-          <img decoding="async" width="240" height="240" 
-              sizes="(max-width: 991px) 80vw, 240px" 
-              srcset="{{url}}assets/images/food/tigris_fries_5_400.jpeg 400w, 
+          <img decoding="async" width="240" height="240"
+              sizes="(max-width: 991px) 80vw, 240px"
+              srcset="{{url}}assets/images/food/tigris_fries_5_400.jpeg 400w,
                       {{url}}assets/images/food/tigris_fries_5_400.jpeg 800w"
               src="{{url}}assets/images/food/tigris_fries_5_400.jpeg"
-              alt="Tender, marinated chicken shawarma on a perfectly baked flatbread"
+              alt="Tigris seasoned fries"
               class="round-imgs" loading="lazy" />
-          <h2 class="fw-bold pt-3">Fantastic</h2>
-          <p class="pb-3 pt-1">One taste and you're transported. Let our authentic flavors speak to your soul. Every dish is a story whispered from the heart of the Mediterranean.</p>
+          <h2 class="fw-bold pt-3">Always Generous</h2>
+          <p class="pb-3 pt-1">Portions that actually fill you up. Our guests don't just leave satisfied — they leave with leftovers. That's the Tigris standard.</p>
           <a class="btn btn-width250 btn-danger" href="{{url}}menu?scrollTo=order-options">Order Online &raquo;</a>
         </div>
       </div>
@@ -613,6 +576,29 @@
       </a>
     </div>
 
+    {{!-- Why Tigris --}}
+    <section class="why-tigris scroll-animate">
+      <div class="container">
+        <div class="row text-center g-4">
+          <div class="col-md-4">
+            <i class="bi bi-fire fs-2 text-danger mb-2 d-block"></i>
+            <strong class="d-block mb-1">Grilled Fresh Daily</strong>
+            <span class="text-muted small">Never frozen. Every skewer cooked to order.</span>
+          </div>
+          <div class="col-md-4">
+            <i class="bi bi-patch-check fs-2 text-danger mb-2 d-block"></i>
+            <strong class="d-block mb-1">Premium Ingredients Only</strong>
+            <span class="text-muted small">Quality and trust you can count on.</span>
+          </div>
+          <div class="col-md-4">
+            <i class="bi bi-people fs-2 text-danger mb-2 d-block"></i>
+            <strong class="d-block mb-1">Catering for 10–500+</strong>
+            <span class="text-muted small">Trusted by 500+ local businesses.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     {{!-- Hours & Location --}}
     <section class="container">
       <div class="container scroll-animate py-4 border-brand-primary rounded-3 visit-us-card"
@@ -654,6 +640,10 @@
   {{> footer}}
 
   {{!-- JS --}}
+  {{!-- GSAP + ScrollTrigger (hero frame sequence) --}}
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <script src="{{url}}assets/js/heroFrames.js" defer></script>
   <script src="{{url}}assets/js/homeAnimation.js" defer></script>
   <script src="{{url}}assets/js/jarallax.js" defer></script>
   <script src="{{url}}assets/js/scrollbar.js" defer></script>

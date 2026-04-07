@@ -7,6 +7,19 @@ let accumulatedScroll = 0; // to track slow scroll down
 const SCROLL_THRESHOLD = 60; // Total downward movement required to hide the navbar
 const TOP_PAGE_BUFFER = 20; // Buffer zone at the top of the page (to prevent mobile 'pull' bug)
 
+// ── Hero transparency (home page only) ───────────────────────────────────────
+var heroTrack = document.querySelector('.hero-scroll-track');
+function updateNavbarTransparency() {
+  if (!heroTrack) return;
+  var heroEnd = heroTrack.offsetHeight - window.innerHeight * 0.5;
+  if (window.scrollY < heroEnd) {
+    userNavbar.classList.add('navbar-transparent');
+  } else {
+    userNavbar.classList.remove('navbar-transparent');
+  }
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 let ticking = false;
 let ignoreScroll = false;
 let documentHeight = 0;
@@ -117,6 +130,7 @@ function handleNavbarVisibility() {
   }
   
   lastScrollY = currentScrollY;
+  updateNavbarTransparency();
   ticking = false;
 }
 
@@ -133,8 +147,9 @@ window.addEventListener('DOMContentLoaded', () => {
   if (window.scrollY < TOP_PAGE_BUFFER) {
     userNavbar.classList.remove('hidden');
   }
-  lastScrollY = window.scrollY; // Set initial baseline
+  lastScrollY = window.scrollY;
   accumulatedScroll = 0;
+  updateNavbarTransparency(); // set initial transparent state on home page
 });
 
 // Mobile menu ignore scroll logic (for toggler click)
