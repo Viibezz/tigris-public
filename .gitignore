@@ -1,0 +1,9 @@
+.venv
+contactpage-lambda-package/
+docs/
+.DS_Store
+build_utils/nodejs/node_modules/
+build_utils/nodejs/package-lock.json
+build_utils/nodejs/package.json
+*.mp4
+responder_prompt.txt
