@@ -13,8 +13,6 @@
   if (!canvas) return;
 
   var ctx = canvas.getContext('2d', { alpha: false });
-  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   // ── Sizing ----------------------------------------------------------------
   // Set initial dimensions immediately so the canvas occupies space.
   canvas.width  = window.innerWidth;
@@ -64,9 +62,6 @@
   idle(function () {
     for (var i = 1; i < FRAME_COUNT; i++) loadFrame(i);
   });
-
-  // ── Reduced motion: static frame 0, no animation -------------------------
-  if (prefersReduced) return;
 
   // ── GSAP ScrollTrigger ----------------------------------------------------
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {

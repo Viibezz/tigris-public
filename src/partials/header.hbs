@@ -78,8 +78,8 @@
       script-src
         'self'
         https://cdn.jsdelivr.net https://cdn.jsdelivr.net/npm
-        https://www.googletagmanager.com https://www.google-analytics.com
         https://www.google.com https://www.gstatic.com https://www.recaptcha.net
+        https://static.cloudflareinsights.com
         'unsafe-inline';
       style-src
         'self'
@@ -91,9 +91,10 @@
         'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:;
       connect-src
         'self'
-        https://www.google-analytics.com https://www.googletagmanager.com https://cdn.jsdelivr.net
+        https://cdn.jsdelivr.net
         https://www.google.com https://www.gstatic.com https://www.recaptcha.net
-        https://o3pe4aw2c8.execute-api.us-east-1.amazonaws.com/FormSubmissionHandler;
+        https://o3pe4aw2c8.execute-api.us-east-1.amazonaws.com/FormSubmissionHandler
+        https://cloudflareinsights.com;
       frame-src
         'self'
         https://www.google.com https://www.recaptcha.net https://maps.googleapis.com;
@@ -105,11 +106,7 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests;"> -->
 
 
-  {{!-- Networking hints for analytics/CDNs --}}
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-  <link rel="dns-prefetch" href="https://www.google-analytics.com">
-  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  {{!-- Networking hints for CDNs --}}
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
@@ -271,6 +268,5 @@
   <script src="{{url}}assets/js/a11y-ux.js" defer></script>
   <script src="{{url}}assets/js/prefetch.js" defer></script>
 
-  {{!-- google analytics  --}}
-  {{> analytics}}
+
 </head>
