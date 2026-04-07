@@ -117,49 +117,9 @@
   {{>footer}}
 
   <script>
-    // Get the inlined_full_menu_data_json data from the context defined in index.py
     window.tigrisMenuData = {{{inlined_full_menu_data_json}}};
-
-    // Json-LD structured data for the menu
-    (() => {
-      window.__COMPANY__ = "{{company}}";
-      window.__SITE_URL__ = "{{url}}";
-    
-      const menuData = window.tigrisMenuData || [];
-      const siteUrl = window.__SITE_URL__ || "";
-      
-      if (!menuData.length) return;
-
-      // Generate Menu JSON-LD
-      const menuJsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Menu",
-        "name": `${window.__COMPANY__} Menu`,
-        "url": siteUrl + "/menu",
-        "hasMenuSection": menuData.map(section => ({
-          "@type": "MenuSection",
-          "name": section.name,
-          "hasMenuItem": section.items.map(item => ({
-            "@type": "MenuItem",
-            "name": item.name,
-            "description": item.description || "",
-            "image": item.thumb ? siteUrl + item.thumb : undefined,
-            "offers": {
-              "@type": "Offer",
-              "price": item.price || "",
-              "priceCurrency": "USD"
-            }
-          }))
-        }))
-      };
-
-      // Inject JSON-LD into the head
-      const script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.textContent = JSON.stringify(menuJsonLd, null, 2);
-      document.head.appendChild(script);
-    })();
-
+    window.__COMPANY__ = "{{company}}";
+    window.__SITE_URL__ = "{{url}}";
 
     // Highlight the "special" call tigris buttons on click
     document.addEventListener('DOMContentLoaded', function() {
@@ -179,12 +139,6 @@
     });
 
 
-  </script>
-
-  <script>
-    window.tigrisMenuData = {{{inlined_full_menu_data_json}}};
-    window.__SITE_URL__ = "{{url}}";
-    window.__COMPANY__ = "{{company}}";
   </script>
 
   <script type="module" src="{{url}}assets/js/menu.js"></script>

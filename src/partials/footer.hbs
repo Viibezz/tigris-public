@@ -40,11 +40,32 @@
                 </address>
               </li>
               <li class="mb-1">
-                <a  href="tel:{{phone}}" aria-label="Call us at {{phone}}">{{phone}}</a>
+                <a href="tel:{{phone}}" aria-label="Call us at {{phone}}">{{phone}}</a>
               </li>
               <li>
-                <a  href="mailto:{{email}}" aria-label="Email us at {{email}}">{{email}}</a>
+                <a href="mailto:{{email}}" aria-label="Email us at {{email}}">{{email}}</a>
               </li>
+            </ul>
+          </section>
+
+          <!-- Hours -->
+          <section class="flex-grow-1" aria-labelledby="footer-hours-h">
+            <h2 id="footer-hours-h" class="h6 text-uppercase fw-bold mb-3">Hours</h2>
+            <ul class="list-unstyled small mb-0">
+              <li class="mb-1">Mon – Sat &nbsp;·&nbsp; 10 am – 7 pm</li>
+              <li class="text-muted">Closed Sunday</li>
+            </ul>
+          </section>
+
+          <!-- Quick Links -->
+          <section class="flex-grow-1" aria-labelledby="footer-links-h">
+            <h2 id="footer-links-h" class="h6 text-uppercase fw-bold mb-3">Explore</h2>
+            <ul class="list-unstyled small mb-0">
+              <li class="mb-1"><a href="{{url}}menu?scrollTo=salads">Menu</a></li>
+              <li class="mb-1"><a href="{{url}}catering">Catering</a></li>
+              <li class="mb-1"><a href="{{url}}our-story">Our Story</a></li>
+              <li class="mb-1"><a href="{{url}}gallery">Gallery</a></li>
+              <li><a href="{{url}}contact">Contact</a></li>
             </ul>
           </section>
 
@@ -52,8 +73,8 @@
           <section class="flex-grow-1" aria-labelledby="footer-legal-h">
             <h2 id="footer-legal-h" class="h6 text-uppercase fw-bold mb-3">Legal</h2>
             <ul class="list-unstyled small mb-0">
-              <li class="mb-1"><a  href="{{url}}terms">Terms</a></li>
-              <li><a  href="{{url}}privacy">Privacy</a></li>
+              <li class="mb-1"><a href="{{url}}terms">Terms</a></li>
+              <li><a href="{{url}}privacy">Privacy</a></li>
             </ul>
           </section>
         </div>
@@ -90,6 +111,47 @@
 
           <hr class="footer-hr my-2" aria-hidden="true">
 
+          <!-- Hours (mobile) -->
+          <button class="footer-accordion btn w-100 d-flex justify-content-between align-items-center text-start py-3 px-0 shadow-none border-0"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#footerHours"
+                  aria-expanded="false"
+                  aria-controls="footerHours">
+            <span class="fw-bold text-capitalize">Hours</span>
+            <i class="bi bi-chevron-down ms-2"></i>
+          </button>
+          <div id="footerHours" class="collapse" data-bs-parent="#footerContent">
+            <ul class="list-unstyled ps-2 pb-3 mb-0 small">
+              <li class="mb-1">Mon – Sat &nbsp;·&nbsp; 10 am – 7 pm</li>
+              <li class="text-muted">Closed Sunday</li>
+            </ul>
+          </div>
+
+          <hr class="footer-hr my-2" aria-hidden="true">
+
+          <!-- Quick Links (mobile) -->
+          <button class="footer-accordion btn w-100 d-flex justify-content-between align-items-center text-start py-3 px-0 shadow-none border-0"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#footerExplore"
+                  aria-expanded="false"
+                  aria-controls="footerExplore">
+            <span class="fw-bold text-capitalize">Explore</span>
+            <i class="bi bi-chevron-down ms-2"></i>
+          </button>
+          <div id="footerExplore" class="collapse" data-bs-parent="#footerContent">
+            <ul class="list-unstyled ps-2 pb-3 mb-0 small">
+              <li class="mb-1"><a href="{{url}}menu?scrollTo=salads">Menu</a></li>
+              <li class="mb-1"><a href="{{url}}catering">Catering</a></li>
+              <li class="mb-1"><a href="{{url}}our-story">Our Story</a></li>
+              <li class="mb-1"><a href="{{url}}gallery">Gallery</a></li>
+              <li><a href="{{url}}contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <hr class="footer-hr my-2" aria-hidden="true">
+
           <!-- Legal (mobile) -->
           <button class="footer-accordion btn  w-100 d-flex justify-content-between align-items-center text-start py-3 px-0 shadow-none border-0"
                   type="button"
@@ -108,6 +170,11 @@
           </div>
 
           <hr class="footer-hr my-2" aria-hidden="true">
+        </div>
+
+        <!-- Order CTA -->
+        <div class="text-center py-4">
+          <a href="{{url}}menu?scrollTo=order-options" class="btn btn-danger px-4">Order Online →</a>
         </div>
 
         <!-- Bottom line -->
