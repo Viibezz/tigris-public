@@ -32,8 +32,11 @@ const cb3 = function (entries, observer) {
         ? Array.from(entry.target.parentElement.children)
         : [];
       const idx = Math.max(siblings.indexOf(entry.target), 0);
-      // Parent fade: 0.3s delay + 0.8s transition = 1.1s; stagger headings after that
-      setTimeout(() => heading.classList.add('inview'), 1100 + idx * 180);
+      // Desktop: start wipe immediately alongside parent fade (no blank period), staggered
+      // Mobile: cols appear one at a time so wait until parent is mostly visible
+      const isDesktop = window.matchMedia('(min-width: 992px)').matches;
+      const delay = isDesktop ? idx * 200 : 600;
+      setTimeout(() => heading.classList.add('inview'), delay);
     }
   });
 };
