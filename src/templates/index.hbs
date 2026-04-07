@@ -43,8 +43,16 @@
       <span>
         <strong>4.5★</strong> &nbsp;·&nbsp;
         <strong>1,300+</strong> reviews across Google &amp; Yelp &nbsp;·&nbsp;
-        San Diego's favourite Mediterranean grill
+        San Diego's favorite Mediterranean grill
       </span>
+    </div>
+
+    {{!-- Marquee ticker --}}
+    <div class="marquee-strip my-5" aria-hidden="true">
+      <div class="marquee-track">
+        <span>FRESH&nbsp;&nbsp;·&nbsp;&nbsp;FAST&nbsp;&nbsp;·&nbsp;&nbsp;FANTASTIC&nbsp;&nbsp;·&nbsp;&nbsp;TIGRIS MEDITERRANEAN GRILLE&nbsp;&nbsp;·&nbsp;&nbsp;SAN DIEGO&nbsp;&nbsp;·&nbsp;&nbsp;EST. 2012&nbsp;&nbsp;·&nbsp;&nbsp;FRESH&nbsp;&nbsp;·&nbsp;&nbsp;FAST&nbsp;&nbsp;·&nbsp;&nbsp;FANTASTIC&nbsp;&nbsp;·&nbsp;&nbsp;TIGRIS MEDITERRANEAN GRILLE&nbsp;&nbsp;·&nbsp;&nbsp;SAN DIEGO&nbsp;&nbsp;·&nbsp;&nbsp;EST. 2012&nbsp;&nbsp;·&nbsp;&nbsp;FRESH&nbsp;&nbsp;·&nbsp;&nbsp;FAST&nbsp;&nbsp;·&nbsp;&nbsp;FANTASTIC&nbsp;&nbsp;·&nbsp;&nbsp;TIGRIS MEDITERRANEAN GRILLE&nbsp;&nbsp;·&nbsp;&nbsp;SAN DIEGO&nbsp;&nbsp;·&nbsp;&nbsp;EST. 2012&nbsp;&nbsp;·&nbsp;&nbsp;FRESH&nbsp;&nbsp;·&nbsp;&nbsp;FAST&nbsp;&nbsp;·&nbsp;&nbsp;FANTASTIC&nbsp;&nbsp;·&nbsp;&nbsp;TIGRIS MEDITERRANEAN GRILLE&nbsp;&nbsp;·&nbsp;&nbsp;SAN DIEGO&nbsp;&nbsp;·&nbsp;&nbsp;EST. 2012&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+        <span>FRESH&nbsp;&nbsp;·&nbsp;&nbsp;FAST&nbsp;&nbsp;·&nbsp;&nbsp;FANTASTIC&nbsp;&nbsp;·&nbsp;&nbsp;TIGRIS MEDITERRANEAN GRILLE&nbsp;&nbsp;·&nbsp;&nbsp;SAN DIEGO&nbsp;&nbsp;·&nbsp;&nbsp;EST. 2012&nbsp;&nbsp;·&nbsp;&nbsp;FRESH&nbsp;&nbsp;·&nbsp;&nbsp;FAST&nbsp;&nbsp;·&nbsp;&nbsp;FANTASTIC&nbsp;&nbsp;·&nbsp;&nbsp;TIGRIS MEDITERRANEAN GRILLE&nbsp;&nbsp;·&nbsp;&nbsp;SAN DIEGO&nbsp;&nbsp;·&nbsp;&nbsp;EST. 2012&nbsp;&nbsp;·&nbsp;&nbsp;FRESH&nbsp;&nbsp;·&nbsp;&nbsp;FAST&nbsp;&nbsp;·&nbsp;&nbsp;FANTASTIC&nbsp;&nbsp;·&nbsp;&nbsp;TIGRIS MEDITERRANEAN GRILLE&nbsp;&nbsp;·&nbsp;&nbsp;SAN DIEGO&nbsp;&nbsp;·&nbsp;&nbsp;EST. 2012&nbsp;&nbsp;·&nbsp;&nbsp;FRESH&nbsp;&nbsp;·&nbsp;&nbsp;FAST&nbsp;&nbsp;·&nbsp;&nbsp;FANTASTIC&nbsp;&nbsp;·&nbsp;&nbsp;TIGRIS MEDITERRANEAN GRILLE&nbsp;&nbsp;·&nbsp;&nbsp;SAN DIEGO&nbsp;&nbsp;·&nbsp;&nbsp;EST. 2012&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+      </div>
     </div>
 
     {{!-- Browse Menu --}}
@@ -129,9 +137,11 @@
       <div class="container">
         <div class="row align-items-center g-0 g-lg-5">
           <div class="col-lg-6">
-            <img src="{{url}}assets/images/hero/beef-tikka-plate-dark.webp"
-                 alt="Beef tikka plate with saffron rice, hummus, tabbouleh and pita — Tigris Mediterranean Grille"
-                 class="w-100 signature-dish-img" loading="lazy">
+            <div class="signature-dish-img-wrap">
+              <img src="{{url}}assets/images/hero/beef-tikka-plate-dark.webp"
+                   alt="Beef tikka plate with saffron rice, hummus, tabbouleh and pita — Tigris Mediterranean Grille"
+                   class="w-100 signature-dish-img" loading="lazy">
+            </div>
           </div>
           <div class="col-lg-6 signature-dish-copy">
             <p class="signature-dish-label">From Our Kitchen</p>
@@ -165,7 +175,7 @@
               src="{{url}}assets/images/food/beef_kabob_plate_1_1_400.jpeg"
               alt="Beef kabob plate served with hummus, yellow rice, tabbouleh, sauce, and fresh pita bread at Tigris Mediterranean Grille"
               class="round-imgs" loading="lazy" />
-          <h2 class="fw-bold pt-3">Fresh</h2>
+          <h2 class="fw-bold pt-3 value-heading">Fresh</h2>
           <p class="pb-3 pt-1">Grilled to perfection. We combine crisp vegetables, tender proteins, and bold spices, all cooked over a flame for an unforgettable burst of flavor.</p>
           <a class="btn btn-width250 btn-danger" href="{{url}}menu?scrollTo=plates">Browse Plates &raquo;</a>
         </div>
@@ -178,7 +188,7 @@
               src="{{url}}assets/images/food/tigris_salad_1_400.jpeg"
               alt="A fresh Tigris salad featuring spring greens, sweet cranberries, crunchy candied pecans, and creamy blue cheese, dressed with raspberry vinaigrette"
               class="round-imgs" loading="lazy" />
-          <h2 class="fw-bold pt-3">Fast</h2>
+          <h2 class="fw-bold pt-3 value-heading">Fast</h2>
           <p class="pb-3 pt-1">Your cravings, satisfied instantly. Enjoy a delicious escape with our fire-kissed dishes, perfect for a quick lunch, an easy dinner, or whenever a craving hits.</p>
           <a class="btn btn-width250 btn-danger" href="{{url}}catering">Catering Specials &raquo;</a>
         </div>
@@ -191,7 +201,7 @@
               src="{{url}}assets/images/food/tigris_fries_5_400.jpeg"
               alt="Tigris seasoned fries"
               class="round-imgs" loading="lazy" />
-          <h2 class="fw-bold pt-3">Fantastic</h2>
+          <h2 class="fw-bold pt-3 value-heading">Fantastic</h2>
           <p class="pb-3 pt-1">One taste and you're transported. Let our authentic flavors speak to your soul. Every dish is a story whispered from the heart of the Mediterranean.</p>
           <a class="btn btn-width250 btn-danger" href="{{url}}menu?scrollTo=order-options">Order Online &raquo;</a>
         </div>

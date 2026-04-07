@@ -21,9 +21,19 @@
 const appearElements = document.querySelectorAll(".scroll-animate");
 const cb3 = function (entries, observer) {
   entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("inview");
-      observer.unobserve(entry.target);
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("inview");
+    observer.unobserve(entry.target);
+
+    // If this is a trio col, reveal its value heading after the parent fades in
+    const heading = entry.target.querySelector('.value-heading');
+    if (heading) {
+      const siblings = entry.target.parentElement
+        ? Array.from(entry.target.parentElement.children)
+        : [];
+      const idx = Math.max(siblings.indexOf(entry.target), 0);
+      // Parent fade: 0.3s delay + 0.8s transition = 1.1s; stagger headings after that
+      setTimeout(() => heading.classList.add('inview'), 1100 + idx * 180);
     }
   });
 };
@@ -40,3 +50,4 @@ appearElements.forEach((element) => io3.observe(element));
     fill.style.width = (pct || 0) + '%';
   }, { passive: true });
 })();
+
