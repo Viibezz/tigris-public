@@ -41,11 +41,18 @@
   {{> navbar}}
 
   <section class="contact-hero">
-    <div class="contact-hero__image">
-      <img src="{{url}}assets/images/tigris-interior3.webp"
-        alt="Inside Tigris Mediterranean Grille dining room"
-        width="1200" loading="eager" />
-    </div>
+    <picture class="contact-hero__image">
+      <img srcset="{{url}}assets/images/index/flatbreads-480.webp 480w,
+                   {{url}}assets/images/index/flatbreads-640.webp 640w,
+                   {{url}}assets/images/index/flatbreads-760.webp 760w,
+                   {{url}}assets/images/index/flatbreads-960.webp 960w,
+                   {{url}}assets/images/index/flatbreads-1280.webp 1280w,
+                   {{url}}assets/images/index/flatbreads-1920.webp 1920w"
+           sizes="100vw"
+           src="{{url}}assets/images/index/flatbreads-1920.webp"
+           alt="Brick-oven flatbreads fresh from Tigris Mediterranean Grille"
+           width="1920" height="1080" loading="eager" />
+    </picture>
   </section>
 
   {{!-- Restaurant Info --}}
