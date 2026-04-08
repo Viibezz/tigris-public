@@ -3713,6 +3713,32 @@ blockquote {
   transform: translateY(-2px);
 }
 
+/* catering mid-page CTA buttons (Stop Settling, Walk Into Your Event) */
+.btn-catering-cta {
+  background-color: var(--brand-primary);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(120, 0, 0, 0.3);
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn-catering-cta:hover {
+  background-color: #8b0000;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(120, 0, 0, 0.4);
+}
+
+.btn-catering-cta:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 16px rgba(120, 0, 0, 0.3);
+}
+
 /* catering section */
 .view-tigris-menu--catering {
   background: linear-gradient(135deg, #780000 0%, #8b0000 15%, #a52a2a 50%, #b22222 100%) !important;
@@ -4255,6 +4281,7 @@ section[id="salads"] {
 .hero-video-container {
   position: relative;
   width: 100%;
+  aspect-ratio: 16 / 9;
   max-height: 90vh;
   overflow: hidden;
   border-radius: 0.5rem;
@@ -4280,9 +4307,19 @@ section[id="salads"] {
   transition-delay: .3s;
 }
 
+.light-title {
+  color: var(--brand-primary);
+}
+
+.checklist-block {
+  width: fit-content;
+  margin-inline: auto;
+}
+
 .unforgettable-celebrations h2,
 .irresistible-effortless h3,
 .celebrations-with-flavor h3,
+.catering-event-types h3,
 .start-drooling h3 {
   font-family: var(--font-georgia);
   font-weight: 700;
@@ -4297,8 +4334,14 @@ section[id="salads"] {
   color: #6a6a6a;
 }
 
+.start-drooling {
+  background: linear-gradient(180deg, #f5e1d1 0%, #fff 65%);
+  border-top: 1px solid rgba(242, 195, 114, .4);
+  padding: 3rem 0;
+}
+
 .start-drooling .btn {
-  background: #9b2222;
+  background: var(--brand-primary);
   border: 0;
   padding: 15px 30px;
   text-transform: uppercase;
@@ -4909,4 +4952,16 @@ section[id="salads"] {
 
 .signature-dish-img-wrap .signature-dish-img {
   border-radius: 0;
+}
+.contact-hero {
+  width: 100%;
+  max-height: 340px;
+  overflow: hidden;
+}
+.contact-hero__image img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
 }
