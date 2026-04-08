@@ -4337,7 +4337,7 @@ section[id="salads"] {
 .start-drooling {
   background: linear-gradient(180deg, #f5e1d1 0%, #fff 65%);
   border-top: 1px solid rgba(242, 195, 114, .4);
-  padding: 3rem 0;
+  padding: 4rem 0 2rem;
 }
 
 .start-drooling .btn {
