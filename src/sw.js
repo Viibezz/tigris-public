@@ -18,7 +18,7 @@ const ROUTES_TO_CACHE = [
 
 // List static assets to cache (CSS, JS, key images)
 const ASSETS_TO_CACHE = [
-  "/assets/css/custom_css.css",
+  "/assets/css/custom_css.css?v=20260408",
   "/assets/js/jarallax.js",
   "/assets/js/gallery.js",
   "/assets/js/menu.js",
